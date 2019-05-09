@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="-12" width="414" height="874"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cci-Cz-V2j" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="157" y="532" width="128" height="44"/>
+                                <rect key="frame" x="157" y="518" width="128" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="B5A-to-aN4"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQz-16-dpN" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="305" y="519" width="70" height="70"/>
+                                <rect key="frame" x="305" y="505" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="BPC-2E-IvO"/>
                                     <constraint firstAttribute="width" constant="70" id="ySj-bA-hfv"/>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="xgw-Kf-ZIi">
-                                <rect key="frame" x="112" y="371" width="263" height="101"/>
+                                <rect key="frame" x="112" y="357" width="263" height="101"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DSM-Po-FMo">
                                         <rect key="frame" x="0.0" y="0.0" width="263" height="27"/>
@@ -114,13 +114,13 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="QjD-Fq-6M9">
-                                <rect key="frame" x="328.5" y="538" width="23" height="32"/>
+                                <rect key="frame" x="332" y="532" width="16" height="16"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Entrar" translatesAutoresizingMaskIntoConstraints="NO" id="rsM-OY-G7v">
-                                <rect key="frame" x="112" y="288" width="110" height="30"/>
+                                <rect key="frame" x="112" y="288" width="16" height="16"/>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete os campos acima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22I-Pa-rkZ">
-                                <rect key="frame" x="112" y="480" width="156" height="14.5"/>
+                                <rect key="frame" x="112" y="466" width="156" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -196,7 +196,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome/Apelido" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gJc-KE-f4z">
-                                                                <rect key="frame" x="0.0" y="0.0" width="112.5" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -210,6 +210,7 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="gJc-KE-f4z" firstAttribute="width" secondItem="bh7-yi-d9Z" secondAttribute="width" id="9V3-LL-FeY"/>
                                                             <constraint firstItem="bh7-yi-d9Z" firstAttribute="leading" secondItem="NEU-3r-Vnl" secondAttribute="leading" id="CEK-Fd-6GZ"/>
                                                             <constraint firstAttribute="trailing" secondItem="bh7-yi-d9Z" secondAttribute="trailing" id="hAo-zr-I3v"/>
                                                         </constraints>
@@ -218,7 +219,7 @@
                                                         <rect key="frame" x="0.0" y="74" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bNB-YE-U6S">
-                                                                <rect key="frame" x="0.0" y="0.0" width="45" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -233,6 +234,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="oCe-mD-zr3" firstAttribute="leading" secondItem="EIS-XX-88C" secondAttribute="leading" id="6qi-Jr-ZRh"/>
+                                                            <constraint firstItem="bNB-YE-U6S" firstAttribute="width" secondItem="oCe-mD-zr3" secondAttribute="width" id="Iac-Hd-rwM"/>
                                                             <constraint firstAttribute="trailing" secondItem="oCe-mD-zr3" secondAttribute="trailing" id="lUl-ab-STw"/>
                                                         </constraints>
                                                     </stackView>
@@ -240,7 +242,7 @@
                                                         <rect key="frame" x="0.0" y="148" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Telefone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ykm-Ps-Tbb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="69.5" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
@@ -255,6 +257,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="qs8-ld-aWt" firstAttribute="leading" secondItem="ne0-4b-ysh" secondAttribute="leading" id="Fwv-Pj-9Oi"/>
+                                                            <constraint firstItem="Ykm-Ps-Tbb" firstAttribute="width" secondItem="qs8-ld-aWt" secondAttribute="width" id="Qt4-ru-8ev"/>
                                                             <constraint firstAttribute="trailing" secondItem="qs8-ld-aWt" secondAttribute="trailing" id="neE-vj-agA"/>
                                                         </constraints>
                                                     </stackView>
@@ -262,7 +265,7 @@
                                                         <rect key="frame" x="0.0" y="222" width="350" height="27"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wb-j9-sy9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="52" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -278,13 +281,14 @@
                                                         <constraints>
                                                             <constraint firstItem="q1V-I1-WlB" firstAttribute="leading" secondItem="HHu-YS-RZL" secondAttribute="leading" id="03A-cg-pvp"/>
                                                             <constraint firstAttribute="trailing" secondItem="q1V-I1-WlB" secondAttribute="trailing" id="enB-wK-d13"/>
+                                                            <constraint firstItem="1wb-j9-sy9" firstAttribute="width" secondItem="q1V-I1-WlB" secondAttribute="width" id="hjs-DT-85D"/>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="s6j-nr-jva">
                                                         <rect key="frame" x="0.0" y="297" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fs8-ox-ZkY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="131" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -299,6 +303,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="SiK-gz-Pbj" secondAttribute="trailing" id="Gi0-st-X72"/>
+                                                            <constraint firstItem="Fs8-ox-ZkY" firstAttribute="width" secondItem="SiK-gz-Pbj" secondAttribute="width" id="OUz-L7-A2N"/>
                                                             <constraint firstItem="SiK-gz-Pbj" firstAttribute="leading" secondItem="s6j-nr-jva" secondAttribute="leading" id="pJ3-Gi-jYT"/>
                                                         </constraints>
                                                     </stackView>
@@ -324,12 +329,18 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="xu7-5f-WB0" kind="show" id="V3P-zQ-EMa"/>
+                                                    <segue destination="xu7-5f-WB0" kind="show" identifier="CreationSegue" id="V3P-zQ-EMa"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="Q8x-0x-VwH">
-                                                <rect key="frame" x="335.5" y="763" width="23" height="32"/>
+                                                <rect key="frame" x="339" y="771" width="16" height="16"/>
                                             </imageView>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete os campos acima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usl-x8-uHI">
+                                                <rect key="frame" x="32" y="687" width="156" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -338,12 +349,14 @@
                                             <constraint firstItem="up0-Yy-LFb" firstAttribute="leading" secondItem="hoU-aK-cbN" secondAttribute="leading" constant="36" id="LYU-ar-nBJ"/>
                                             <constraint firstAttribute="trailing" secondItem="BKr-zf-5sX" secondAttribute="trailing" constant="32" id="P6e-vA-xg9"/>
                                             <constraint firstItem="up0-Yy-LFb" firstAttribute="top" secondItem="xmq-Fg-Qfe" secondAttribute="bottom" constant="20" id="R5c-5q-Sc3"/>
+                                            <constraint firstItem="usl-x8-uHI" firstAttribute="top" secondItem="BKr-zf-5sX" secondAttribute="bottom" constant="16" id="XcO-EH-2N1"/>
                                             <constraint firstItem="xmq-Fg-Qfe" firstAttribute="top" secondItem="hoU-aK-cbN" secondAttribute="top" id="YMh-HB-1bf"/>
                                             <constraint firstAttribute="trailing" secondItem="q5Q-7W-sWj" secondAttribute="trailing" constant="32" id="coF-gg-f8A"/>
                                             <constraint firstItem="Q8x-0x-VwH" firstAttribute="centerY" secondItem="q5Q-7W-sWj" secondAttribute="centerY" id="diA-HD-iah"/>
                                             <constraint firstItem="Q8x-0x-VwH" firstAttribute="centerX" secondItem="q5Q-7W-sWj" secondAttribute="centerX" id="jdY-Va-fB6"/>
                                             <constraint firstAttribute="trailing" secondItem="xmq-Fg-Qfe" secondAttribute="trailing" id="qIr-MK-Ago"/>
                                             <constraint firstItem="BKr-zf-5sX" firstAttribute="leading" secondItem="hoU-aK-cbN" secondAttribute="leading" constant="32" id="tE1-I1-3BO"/>
+                                            <constraint firstItem="usl-x8-uHI" firstAttribute="leading" secondItem="hoU-aK-cbN" secondAttribute="leading" constant="32" id="vkJ-2X-fxJ"/>
                                             <constraint firstItem="BKr-zf-5sX" firstAttribute="top" secondItem="up0-Yy-LFb" secondAttribute="bottom" constant="90" id="z9r-Et-Mv2"/>
                                         </constraints>
                                     </view>
@@ -369,6 +382,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Conta" id="8Kv-Qs-WNj"/>
                     <connections>
+                        <outlet property="CreateEmail" destination="bNB-YE-U6S" id="zRL-CA-f66"/>
+                        <outlet property="CreatePassword" destination="1wb-j9-sy9" id="8mV-Yt-9Mg"/>
+                        <outlet property="Telephone" destination="Ykm-Ps-Tbb" id="T63-HJ-vQM"/>
+                        <outlet property="confirmPass" destination="Fs8-ox-ZkY" id="vIY-gf-JkU"/>
+                        <outlet property="createNameTextField" destination="gJc-KE-f4z" id="1LE-G0-kyB"/>
+                        <outlet property="errorLabel" destination="usl-x8-uHI" id="KxR-95-58I"/>
                         <outlet property="scrollView" destination="gRU-bh-oT4" id="O42-EN-fCz"/>
                     </connections>
                 </viewController>
@@ -473,7 +492,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="LOZ-Qq-68U" kind="show" id="eBw-QP-GQx"/>
+                                                    <segue destination="LOZ-Qq-68U" kind="show" identifier="CreateRepublic" id="eBw-QP-GQx"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As pessoas poderão entrar usando a senha que você criou" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsa-71-hu1">
@@ -489,7 +508,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nome da República" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yc4-Hi-ww5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -503,6 +522,7 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="yc4-Hi-ww5" firstAttribute="width" secondItem="8YI-Hb-ZT0" secondAttribute="width" id="CJr-NK-JUu"/>
                                                             <constraint firstAttribute="trailing" secondItem="8YI-Hb-ZT0" secondAttribute="trailing" id="PJH-Wg-ctv"/>
                                                             <constraint firstItem="8YI-Hb-ZT0" firstAttribute="leading" secondItem="zFI-X7-2PN" secondAttribute="leading" id="gHE-tu-XPD"/>
                                                         </constraints>
@@ -511,7 +531,7 @@
                                                         <rect key="frame" x="0.0" y="74" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jci-Dr-SnZ">
-                                                                <rect key="frame" x="0.0" y="0.0" width="52" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -525,6 +545,7 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="jci-Dr-SnZ" firstAttribute="width" secondItem="m2e-8i-wKU" secondAttribute="width" id="7Na-A7-CRm"/>
                                                             <constraint firstItem="m2e-8i-wKU" firstAttribute="leading" secondItem="l4p-hU-MRN" secondAttribute="leading" id="9yW-dl-ghW"/>
                                                             <constraint firstAttribute="trailing" secondItem="m2e-8i-wKU" secondAttribute="trailing" id="toM-R4-I0d"/>
                                                         </constraints>
@@ -533,7 +554,7 @@
                                                         <rect key="frame" x="0.0" y="148" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirmar Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T5m-OD-66D">
-                                                                <rect key="frame" x="0.0" y="0.0" width="133" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -548,11 +569,18 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="xq8-yd-Ubj" firstAttribute="leading" secondItem="FjT-bK-rUy" secondAttribute="leading" id="KFi-ju-Y7i"/>
+                                                            <constraint firstItem="T5m-OD-66D" firstAttribute="width" secondItem="xq8-yd-Ubj" secondAttribute="width" id="dgR-M6-IYu"/>
                                                             <constraint firstAttribute="trailing" secondItem="xq8-yd-Ubj" secondAttribute="trailing" id="oBp-Ik-SuI"/>
                                                         </constraints>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete os campos acima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rad-5e-8X6">
+                                                <rect key="frame" x="32" y="589" width="156" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -565,7 +593,9 @@
                                             <constraint firstItem="CTd-7h-jPg" firstAttribute="top" secondItem="xO2-vi-D7j" secondAttribute="top" id="To6-8w-Ab1"/>
                                             <constraint firstAttribute="trailing" secondItem="CTd-7h-jPg" secondAttribute="trailing" id="Udl-LR-E3I"/>
                                             <constraint firstItem="SLR-VT-i3h" firstAttribute="top" secondItem="nsa-71-hu1" secondAttribute="bottom" constant="100" id="Vf6-md-Lh8"/>
+                                            <constraint firstItem="rad-5e-8X6" firstAttribute="leading" secondItem="xO2-vi-D7j" secondAttribute="leading" constant="32" id="XhF-9g-mVV"/>
                                             <constraint firstItem="CTd-7h-jPg" firstAttribute="leading" secondItem="xO2-vi-D7j" secondAttribute="leading" id="fWj-hh-LTf"/>
+                                            <constraint firstItem="rad-5e-8X6" firstAttribute="top" secondItem="SLR-VT-i3h" secondAttribute="bottom" constant="16" id="kTC-Zu-Jor"/>
                                             <constraint firstItem="nsa-71-hu1" firstAttribute="leading" secondItem="xO2-vi-D7j" secondAttribute="leading" constant="32" id="rt8-Vy-XjC"/>
                                             <constraint firstAttribute="trailing" secondItem="SLR-VT-i3h" secondAttribute="trailing" constant="32" id="z7J-Sm-aCX"/>
                                         </constraints>
@@ -593,6 +623,7 @@
                     <navigationItem key="navigationItem" title="Conta" id="UEo-jG-315"/>
                     <connections>
                         <outlet property="confirmPassTextField" destination="T5m-OD-66D" id="6MX-e8-biK"/>
+                        <outlet property="errorLabel" destination="rad-5e-8X6" id="rer-d2-JSM"/>
                         <outlet property="passwordTextField" destination="jci-Dr-SnZ" id="DN4-YM-wN0"/>
                         <outlet property="repNameTextField" destination="yc4-Hi-ww5" id="fii-Rc-aPZ"/>
                         <outlet property="scrollView" destination="ep5-AI-oyQ" id="67w-m0-8nc"/>
@@ -679,7 +710,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ID da República" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g59-PX-SWa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="123.5" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -693,6 +724,7 @@
                                                             </view>
                                                         </subviews>
                                                         <constraints>
+                                                            <constraint firstItem="g59-PX-SWa" firstAttribute="width" secondItem="Lar-W3-Ceg" secondAttribute="width" id="9O0-iF-vk9"/>
                                                             <constraint firstItem="Lar-W3-Ceg" firstAttribute="leading" secondItem="SI9-qV-hS5" secondAttribute="leading" id="c2D-Rc-e4M"/>
                                                             <constraint firstAttribute="trailing" secondItem="Lar-W3-Ceg" secondAttribute="trailing" id="xcg-hA-T07"/>
                                                         </constraints>
@@ -701,7 +733,7 @@
                                                         <rect key="frame" x="0.0" y="74" width="350" height="26"/>
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ttt-ge-CeH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="52" height="21"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="21"/>
                                                                 <nil key="textColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -716,6 +748,7 @@
                                                         </subviews>
                                                         <constraints>
                                                             <constraint firstItem="L4B-rL-sGm" firstAttribute="leading" secondItem="Y6A-w4-v86" secondAttribute="leading" id="K7K-Eh-6D3"/>
+                                                            <constraint firstItem="Ttt-ge-CeH" firstAttribute="width" secondItem="L4B-rL-sGm" secondAttribute="width" id="qCO-CI-cdw"/>
                                                             <constraint firstAttribute="trailing" secondItem="L4B-rL-sGm" secondAttribute="trailing" id="xl7-sd-ADb"/>
                                                         </constraints>
                                                     </stackView>
@@ -780,7 +813,7 @@
         <image name="seta" width="23" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="d9e-1b-YhX"/>
+        <segue reference="V3P-zQ-EMa"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

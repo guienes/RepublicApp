@@ -10,7 +10,15 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
     
+    @IBOutlet weak var createNameTextField: UITextField!
+    @IBOutlet weak var CreateEmail: UITextField!
+    @IBOutlet weak var Telephone: UITextField!
+    @IBOutlet weak var CreatePassword:UITextField!
+    @IBOutlet weak var confirmPass: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    let model = AccoountCreationModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +29,23 @@ class CreateAccountViewController: UIViewController {
     override func setScrollViewContentInset(_ inset: UIEdgeInsets) {
         scrollView.contentInset = inset
     }
+    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "CreationSegue" {
+            let (valid, message) = model.validateFields(nome: createNameTextField.text, telephone: Telephone.text, confirmpassword: confirmPass.text, email: Telephone.text, password: CreatePassword.text)
+            
+            
+            //            let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
+            if !valid {
+                self.errorLabel.isHidden = false
+                self.errorLabel.text = message
+            }
+            return valid
+        }
+        return true
     }
-    */
+    
+  
 
 }

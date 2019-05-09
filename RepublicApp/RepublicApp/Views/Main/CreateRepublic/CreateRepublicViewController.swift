@@ -15,6 +15,9 @@ class CreateRepublicViewController: UIViewController {
     @IBOutlet weak var repNameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPassTextField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    let model = CreateRepublic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +28,20 @@ class CreateRepublicViewController: UIViewController {
     override func setScrollViewContentInset(_ inset: UIEdgeInsets) {
         scrollView.contentInset = inset
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "CreateRepublic" {
+            let (valid, message) = model.validateFields(republicname: repNameTextField.text, acesspassword: passwordTextField.text, confirmacesspassword: confirmPassTextField.text)
+            
+            //            let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
+            if !valid {
+                self.errorLabel.isHidden = false
+                self.errorLabel.text = message
+            }
+            return valid
+        }
+        return true
     }
-    */
+
 
 }

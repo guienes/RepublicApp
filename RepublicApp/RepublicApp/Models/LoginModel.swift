@@ -11,10 +11,16 @@ import UIKit
 
 class LoginModel : UIViewController {
     
-    func validateFields(email: String?, password: String?) -> Bool{
-        if let email = email, isValidEmail(testStr: email), let password = password, isPasswordValid(password: password) {
-            return true
+    func validateFields(email: String?, password: String?) -> (Bool,String){
+        if let email = email, isValidEmail(testStr: email){
+            if let password = password, isPasswordValid(password: password){
+                return (true,"")
+            } else {
+                return (false,"Senha incorreta")
+            }
+        } else {
+            return(false,"Email incorreto")
         }
-        return false
+
     }
 }

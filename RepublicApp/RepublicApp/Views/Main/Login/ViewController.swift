@@ -37,7 +37,7 @@ class LoginViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "loginSegue" {
-            let valid = model.validateFields(email: emailTextField.text, password: passwordTextField.text)
+            let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
             if !valid {
                 self.errorLabel.isHidden = false
             }
