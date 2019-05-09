@@ -13,11 +13,20 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    @IBOutlet weak var errorLabel: UILabel!
+    
+    
     let model = LoginModel()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.setupNavigationController()
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationController()
+        self.hideKeyboardWhenTappedAround()
     }
     
     func setupNavigationController() {
@@ -28,7 +37,11 @@ class LoginViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "loginSegue" {
-            return model.validateFields(email: emailTextField.text, password: passwordTextField.text)
+            let valid = model.validateFields(email: emailTextField.text, password: passwordTextField.text)
+            if !valid {
+                self.errorLabel.isHidden = false
+            }
+            return valid
         }
         return true
     }
