@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BC65655228441C8003282BA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC65654228441C8003282BA /* LoginModel.swift */; };
+		3BC6565722844266003282BA /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6565622844266003282BA /* Validation.swift */; };
 		BCC6CC5122834B7900A85AC1 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6CC5022834B7900A85AC1 /* RoundButton.swift */; };
 		BCF60AC722820DE800FB545A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF60AC622820DE800FB545A /* AppDelegate.swift */; };
 		BCF60AC922820DE800FB545A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF60AC822820DE800FB545A /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BC65654228441C8003282BA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		3BC6565622844266003282BA /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		BCC6CC5022834B7900A85AC1 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		BCF60AC322820DE800FB545A /* RepublicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepublicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF60AC622820DE800FB545A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3BC6565022843E4A003282BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3BC6565122843E57003282BA /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3BC6565122843E57003282BA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BCF60ACA22820DE800FB545A /* Main.storyboard */,
+				3BC6565222843E60003282BA /* Login */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3BC6565222843E60003282BA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BCF60AC822820DE800FB545A /* ViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3BC6565322843E82003282BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BC65654228441C8003282BA /* LoginModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BCF60ABA22820DE800FB545A = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +93,14 @@
 		BCF60AC522820DE800FB545A /* RepublicApp */ = {
 			isa = PBXGroup;
 			children = (
-				BCC6CC5022834B7900A85AC1 /* RoundButton.swift */,
 				BCF60AC622820DE800FB545A /* AppDelegate.swift */,
-				BCF60AC822820DE800FB545A /* ViewController.swift */,
-				BCF60ACA22820DE800FB545A /* Main.storyboard */,
+				BCC6CC5022834B7900A85AC1 /* RoundButton.swift */,
+				3BC6565322843E82003282BA /* Models */,
+				3BC6565022843E4A003282BA /* Views */,
 				BCF60ACD22820DE900FB545A /* Assets.xcassets */,
 				BCF60ACF22820DE900FB545A /* LaunchScreen.storyboard */,
 				BCF60AD222820DE900FB545A /* Info.plist */,
+				3BC6565622844266003282BA /* Validation.swift */,
 			);
 			path = RepublicApp;
 			sourceTree = "<group>";
@@ -139,7 +177,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCC6CC5122834B7900A85AC1 /* RoundButton.swift in Sources */,
+				3BC65655228441C8003282BA /* LoginModel.swift in Sources */,
 				BCF60AC922820DE800FB545A /* ViewController.swift in Sources */,
+				3BC6565722844266003282BA /* Validation.swift in Sources */,
 				BCF60AC722820DE800FB545A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
