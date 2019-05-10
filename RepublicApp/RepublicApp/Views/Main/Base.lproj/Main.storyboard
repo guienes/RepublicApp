@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="-12" width="414" height="874"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cci-Cz-V2j" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="157" y="518" width="128" height="44"/>
+                                <rect key="frame" x="157" y="532" width="128" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="B5A-to-aN4"/>
                                 </constraints>
@@ -40,7 +40,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQz-16-dpN" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="305" y="505" width="70" height="70"/>
+                                <rect key="frame" x="305" y="519" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="BPC-2E-IvO"/>
                                     <constraint firstAttribute="width" constant="70" id="ySj-bA-hfv"/>
@@ -63,7 +63,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="xgw-Kf-ZIi">
-                                <rect key="frame" x="112" y="357" width="263" height="101"/>
+                                <rect key="frame" x="112" y="371" width="263" height="101"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DSM-Po-FMo">
                                         <rect key="frame" x="0.0" y="0.0" width="263" height="27"/>
@@ -114,13 +114,13 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="QjD-Fq-6M9">
-                                <rect key="frame" x="332" y="532" width="16" height="16"/>
+                                <rect key="frame" x="328.5" y="538" width="23" height="32"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Entrar" translatesAutoresizingMaskIntoConstraints="NO" id="rsM-OY-G7v">
-                                <rect key="frame" x="112" y="288" width="16" height="16"/>
+                                <rect key="frame" x="112" y="288" width="110" height="30"/>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete os campos acima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22I-Pa-rkZ">
-                                <rect key="frame" x="112" y="466" width="156" height="14.5"/>
+                                <rect key="frame" x="112" y="480" width="156" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -333,7 +333,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="Q8x-0x-VwH">
-                                                <rect key="frame" x="339" y="771" width="16" height="16"/>
+                                                <rect key="frame" x="335.5" y="763" width="23" height="32"/>
                                             </imageView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete os campos acima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usl-x8-uHI">
                                                 <rect key="frame" x="32" y="687" width="156" height="14.5"/>
@@ -696,6 +696,9 @@
                                                         <real key="value" value="7"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="LOZ-Qq-68U" kind="show" identifier="JoinRepublic" id="ZtY-Tn-uWk"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As pessoas poderão entrar usando a senha que você criou" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5s-X2-vx6">
                                                 <rect key="frame" x="32" y="246" width="362" height="53"/>
@@ -754,13 +757,21 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete os campos acima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa3-aj-Sgx">
+                                                <rect key="frame" x="32" y="515" width="156" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="yTo-iJ-epE" secondAttribute="trailing" constant="32" id="3yJ-qL-F65"/>
                                             <constraint firstItem="EPW-oU-PMd" firstAttribute="top" secondItem="sy3-ov-kGC" secondAttribute="top" id="CTn-qT-cEb"/>
                                             <constraint firstAttribute="trailing" secondItem="EPW-oU-PMd" secondAttribute="trailing" id="CVp-Py-z65"/>
+                                            <constraint firstItem="aa3-aj-Sgx" firstAttribute="leading" secondItem="sy3-ov-kGC" secondAttribute="leading" constant="32" id="CZJ-Li-yvX"/>
                                             <constraint firstItem="EPW-oU-PMd" firstAttribute="leading" secondItem="sy3-ov-kGC" secondAttribute="leading" id="Kdh-KH-Kr8"/>
+                                            <constraint firstItem="aa3-aj-Sgx" firstAttribute="top" secondItem="yTo-iJ-epE" secondAttribute="bottom" constant="16" id="Kf7-id-eui"/>
                                             <constraint firstItem="b7q-gc-RzW" firstAttribute="leading" secondItem="sy3-ov-kGC" secondAttribute="leading" constant="32" id="PEl-wm-eFp"/>
                                             <constraint firstAttribute="bottom" secondItem="b7q-gc-RzW" secondAttribute="bottom" constant="64" id="PSU-AZ-5FB"/>
                                             <constraint firstItem="T5s-X2-vx6" firstAttribute="leading" secondItem="sy3-ov-kGC" secondAttribute="leading" constant="32" id="WMY-ZH-ng1"/>
@@ -793,6 +804,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Conta" id="3ln-sp-vp2"/>
                     <connections>
+                        <outlet property="errorLabel" destination="aa3-aj-Sgx" id="GKy-nH-LLX"/>
+                        <outlet property="republicIDTextField" destination="g59-PX-SWa" id="gq9-ZV-brO"/>
+                        <outlet property="republicPasswordTextField" destination="Ttt-ge-CeH" id="1gD-ir-Z3X"/>
                         <outlet property="scrollView" destination="geP-aP-vAX" id="tQT-qh-e7x"/>
                     </connections>
                 </viewController>
@@ -813,6 +827,7 @@
         <image name="seta" width="23" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="eBw-QP-GQx"/>
         <segue reference="V3P-zQ-EMa"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

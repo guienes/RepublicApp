@@ -16,6 +16,7 @@
 		3BC6566922848A25003282BA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC6566822848A25003282BA /* Home.storyboard */; };
 		BCA8B16422849EE1001B0A2E /* AccountCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B16322849EE1001B0A2E /* AccountCreation.swift */; };
 		BCA8B1662284B822001B0A2E /* CreateRepublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B1652284B822001B0A2E /* CreateRepublic.swift */; };
+		BCA8B1682285E69F001B0A2E /* JoinRepublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B1672285E69F001B0A2E /* JoinRepublic.swift */; };
 		BCC6CC5122834B7900A85AC1 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6CC5022834B7900A85AC1 /* RoundButton.swift */; };
 		BCF60AC722820DE800FB545A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF60AC622820DE800FB545A /* AppDelegate.swift */; };
 		BCF60AC922820DE800FB545A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF60AC822820DE800FB545A /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		3BC6566822848A25003282BA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BCA8B16322849EE1001B0A2E /* AccountCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreation.swift; sourceTree = "<group>"; };
 		BCA8B1652284B822001B0A2E /* CreateRepublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRepublic.swift; sourceTree = "<group>"; };
+		BCA8B1672285E69F001B0A2E /* JoinRepublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRepublic.swift; sourceTree = "<group>"; };
 		BCC6CC5022834B7900A85AC1 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		BCF60AC322820DE800FB545A /* RepublicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepublicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCF60AC622820DE800FB545A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				3BC65654228441C8003282BA /* LoginModel.swift */,
 				BCA8B16322849EE1001B0A2E /* AccountCreation.swift */,
 				BCA8B1652284B822001B0A2E /* CreateRepublic.swift */,
+				BCA8B1672285E69F001B0A2E /* JoinRepublic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				BCA8B16422849EE1001B0A2E /* AccountCreation.swift in Sources */,
 				3BC6565C2284595F003282BA /* CreateAccountViewController.swift in Sources */,
 				BCC6CC5122834B7900A85AC1 /* RoundButton.swift in Sources */,
+				BCA8B1682285E69F001B0A2E /* JoinRepublic.swift in Sources */,
 				BCA8B1662284B822001B0A2E /* CreateRepublic.swift in Sources */,
 				3BC65655228441C8003282BA /* LoginModel.swift in Sources */,
 				BCF60AC922820DE800FB545A /* ViewController.swift in Sources */,

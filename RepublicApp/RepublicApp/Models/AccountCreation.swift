@@ -12,7 +12,7 @@ import UIKit
 class AccoountCreationModel : UIViewController {
     
     func validateFields(nome: String?,telephone: String?, confirmpassword:String?, email: String?, password: String?) -> (Bool,String){
-        if let nome = nome{
+        if let nome = nome, nome.isEmpty == false{
             if let email = email, isValidEmail(testStr: email){
                 if let telephone = telephone{
                     if let password = password, isPasswordValid(password: password){
@@ -31,7 +31,7 @@ class AccoountCreationModel : UIViewController {
                 return (false, "Email inválido")
             }
         } else {
-            return (false, "Preencha o campo")
+            return (false, "Coloque algum nome")
         }
 
     }

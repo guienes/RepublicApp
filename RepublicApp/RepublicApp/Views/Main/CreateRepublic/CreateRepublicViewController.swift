@@ -22,6 +22,13 @@ class CreateRepublicViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAutoScrollWhenKeyboardShowsUp()
+        
+        repNameTextField.delegate = self
+        repNameTextField.tag = 1 //Increment accordingly
+        passwordTextField.delegate = self
+        passwordTextField.tag = 2
+        confirmPassTextField.delegate = self
+        confirmPassTextField.tag = 3
     }
     
     // MARK:- Scroll View Content Inset
@@ -35,13 +42,24 @@ class CreateRepublicViewController: UIViewController {
             
             //            let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
             if !valid {
-                self.errorLabel.isHidden = false
                 self.errorLabel.text = message
+                self.errorLabel.isHidden = false
             }
             return valid
         }
         return true
     }
+}
 
-
+extension CreateRepublicViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool { //clica em return, vai pra p
+        if textField == repNameTextField{
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            confirmPassTextField.becomeFirstResponder()
+        } else {
+            confirmPassTextField.resignFirstResponder()
+        }
+        return false
+    }
 }

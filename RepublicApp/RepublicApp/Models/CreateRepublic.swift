@@ -4,7 +4,7 @@ import UIKit
 class CreateRepublic : UIViewController {
     
     func validateFields(republicname: String?,acesspassword: String?, confirmacesspassword: String?) -> (Bool,String){
-        if let republicname = republicname{
+        if let republicname = republicname, republicname.isEmpty == false {
             if let acesspassword = acesspassword, isPasswordValid(password: acesspassword){
                 if let confirmacesspassword = confirmacesspassword, acesspassword == confirmacesspassword{
                     return (true,"")
@@ -19,3 +19,4 @@ class CreateRepublic : UIViewController {
         }
     }
 }
+

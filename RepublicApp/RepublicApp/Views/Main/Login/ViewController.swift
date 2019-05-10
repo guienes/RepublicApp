@@ -40,6 +40,7 @@ class LoginViewController: UIViewController {
             let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
             if !valid {
                 self.errorLabel.isHidden = false
+                self.errorLabel.text = message
             }
             return valid
         }
