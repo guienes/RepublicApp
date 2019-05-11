@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5871BF2285A1CB002CDE9C /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5871BE2285A1CB002CDE9C /* ProductsViewController.swift */; };
 		3BC65655228441C8003282BA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC65654228441C8003282BA /* LoginModel.swift */; };
 		3BC6565722844266003282BA /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6565622844266003282BA /* Validation.swift */; };
 		3BC6565A2284575C003282BA /* AutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC656592284575C003282BA /* AutoScroll.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3B5871BE2285A1CB002CDE9C /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		3BC65654228441C8003282BA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		3BC6565622844266003282BA /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3BC656592284575C003282BA /* AutoScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScroll.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B5871BD2285A19E002CDE9C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				3B5871BE2285A1CB002CDE9C /* ProductsViewController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		3BC6565022843E4A003282BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		3BC65663228488C3003282BA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3B5871BD2285A19E002CDE9C /* New Group */,
 				3BC6566822848A25003282BA /* Home.storyboard */,
 			);
 			path = Home;
@@ -240,6 +251,7 @@
 				BCA8B1662284B822001B0A2E /* CreateRepublic.swift in Sources */,
 				3BC65655228441C8003282BA /* LoginModel.swift in Sources */,
 				BCF60AC922820DE800FB545A /* ViewController.swift in Sources */,
+				3B5871BF2285A1CB002CDE9C /* ProductsViewController.swift in Sources */,
 				3BC6565722844266003282BA /* Validation.swift in Sources */,
 				BCF60AC722820DE800FB545A /* AppDelegate.swift in Sources */,
 				3BC656622284875E003282BA /* JoinRepublicViewController.swift in Sources */,
