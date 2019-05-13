@@ -46,7 +46,16 @@ class LoginViewController: UIViewController {
         }
         return true
     }
+}
 
-
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            passwordTextField.resignFirstResponder()
+        }
+        return false
+    }
 }
 

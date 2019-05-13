@@ -46,6 +46,21 @@ class CreateAccountViewController: UIViewController {
         return true
     }
     
-  
+}
 
+extension CreateAccountViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == createNameTextField {
+            CreateEmail.becomeFirstResponder()
+        } else if textField == CreateEmail{
+            Telephone.becomeFirstResponder()
+        } else if textField == Telephone {
+            CreatePassword.becomeFirstResponder()
+        } else if textField == CreatePassword {
+            confirmPass.becomeFirstResponder()
+        } else {
+            confirmPass.resignFirstResponder()
+        }
+        return false
+    }
 }
