@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="74" id="KGk-i7-Jjw" customClass="ProductTableViewCell" customModule="RepublicApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="73.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kb2-Zp-uzS">
+                        <rect key="frame" x="16" y="72.5" width="288" height="1"/>
+                        <color key="backgroundColor" red="0.43529411764705883" green="0.37254901960784315" blue="0.56470588235294117" alpha="0.56999999999999995" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="X6c-VH-zP5"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lON-X3-TOI" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
+                        <rect key="frame" x="8" y="21" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="UQn-4w-8MK"/>
+                            <constraint firstAttribute="height" constant="30" id="V6r-hs-auG"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.45490196078431372" green="0.35686274509803922" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="J7b-4E-uqa">
+                        <rect key="frame" x="46" y="25" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.42352941176470588" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="Tbi-yi-MUX">
+                        <rect key="frame" x="217.5" y="21" width="86.5" height="30"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YP3-vu-nHl">
+                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="YXG-1S-6Cc"/>
+                                    <constraint firstAttribute="height" constant="30" id="fyQ-Xy-06B"/>
+                                </constraints>
+                                <state key="normal" image="botao_menos"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l9l-Ot-VMv">
+                                <rect key="frame" x="39" y="0.0" width="8.5" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.42352941179999998" green="0.42352941179999998" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOm-5K-oq3">
+                                <rect key="frame" x="56.5" y="0.0" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Of-mZ-fzX"/>
+                                    <constraint firstAttribute="width" constant="30" id="omb-2F-rll"/>
+                                </constraints>
+                                <state key="normal" image="bortao_mais"/>
+                            </button>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Tbi-yi-MUX" secondAttribute="trailing" constant="16" id="BHt-yn-yR2"/>
+                    <constraint firstItem="lON-X3-TOI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="Bwm-IL-teV"/>
+                    <constraint firstItem="lON-X3-TOI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="J0g-LG-l0b"/>
+                    <constraint firstItem="Tbi-yi-MUX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="Nu2-1o-bSC"/>
+                    <constraint firstItem="J7b-4E-uqa" firstAttribute="leading" secondItem="lON-X3-TOI" secondAttribute="trailing" constant="8" id="O5H-bY-MI9"/>
+                    <constraint firstAttribute="bottom" secondItem="Kb2-Zp-uzS" secondAttribute="bottom" id="Wf9-Lg-9mC"/>
+                    <constraint firstAttribute="bottom" secondItem="lON-X3-TOI" secondAttribute="bottom" constant="22.5" id="Xq1-sA-kiA"/>
+                    <constraint firstAttribute="bottom" secondItem="Tbi-yi-MUX" secondAttribute="bottom" constant="22.5" id="Z2A-rS-hTf"/>
+                    <constraint firstItem="Kb2-Zp-uzS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dy3-Zz-pWi"/>
+                    <constraint firstAttribute="trailing" secondItem="Kb2-Zp-uzS" secondAttribute="trailing" constant="16" id="oh5-NS-k1L"/>
+                    <constraint firstItem="J7b-4E-uqa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="-1.5" id="u9Q-ok-6sb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="productNameLabel" destination="J7b-4E-uqa" id="DDt-CH-Qfz"/>
+                <outlet property="qtdLabel" destination="l9l-Ot-VMv" id="z5i-af-yAz"/>
+                <outlet property="qtdStackView" destination="Tbi-yi-MUX" id="gUr-tr-oBO"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="163.39285714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="bortao_mais" width="28" height="28"/>
+        <image name="botao_menos" width="28" height="28"/>
+    </resources>
+</document>
