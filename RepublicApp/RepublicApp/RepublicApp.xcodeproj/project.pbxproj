@@ -1,0 +1,481 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B5871BF2285A1CB002CDE9C /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5871BE2285A1CB002CDE9C /* ProductsViewController.swift */; };
+		3BC65655228441C8003282BA /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC65654228441C8003282BA /* LoginModel.swift */; };
+		3BC6565722844266003282BA /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6565622844266003282BA /* Validation.swift */; };
+		3BC6565A2284575C003282BA /* AutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC656592284575C003282BA /* AutoScroll.swift */; };
+		3BC6565C2284595F003282BA /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6565B2284595F003282BA /* CreateAccountViewController.swift */; };
+		3BC6565F22848570003282BA /* CreateRepublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC6565E22848570003282BA /* CreateRepublicViewController.swift */; };
+		3BC656622284875E003282BA /* JoinRepublicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC656612284875E003282BA /* JoinRepublicViewController.swift */; };
+		3BC6566922848A25003282BA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BC6566822848A25003282BA /* Home.storyboard */; };
+		BC545FFF2289B1E000BBE2EF /* Members.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC545FFE2289B1E000BBE2EF /* Members.storyboard */; };
+		BC5460012289B31300BBE2EF /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5460002289B31300BBE2EF /* MembersViewController.swift */; };
+		BC5460042289C73900BBE2EF /* MembersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5460022289C73900BBE2EF /* MembersTableViewCell.swift */; };
+		BCA8B16422849EE1001B0A2E /* AccountCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B16322849EE1001B0A2E /* AccountCreation.swift */; };
+		BCA8B1662284B822001B0A2E /* CreateRepublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B1652284B822001B0A2E /* CreateRepublic.swift */; };
+		BCA8B1682285E69F001B0A2E /* JoinRepublic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA8B1672285E69F001B0A2E /* JoinRepublic.swift */; };
+		BCC6CC5122834B7900A85AC1 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6CC5022834B7900A85AC1 /* RoundButton.swift */; };
+		BCF60AC722820DE800FB545A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF60AC622820DE800FB545A /* AppDelegate.swift */; };
+		BCF60AC922820DE800FB545A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF60AC822820DE800FB545A /* ViewController.swift */; };
+		BCF60ACC22820DE800FB545A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF60ACA22820DE800FB545A /* Main.storyboard */; };
+		BCF60ACE22820DE900FB545A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCF60ACD22820DE900FB545A /* Assets.xcassets */; };
+		BCF60AD122820DE900FB545A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCF60ACF22820DE900FB545A /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B5871BE2285A1CB002CDE9C /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		3BC65654228441C8003282BA /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		3BC6565622844266003282BA /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
+		3BC656592284575C003282BA /* AutoScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoScroll.swift; sourceTree = "<group>"; };
+		3BC6565B2284595F003282BA /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		3BC6565E22848570003282BA /* CreateRepublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRepublicViewController.swift; sourceTree = "<group>"; };
+		3BC656612284875E003282BA /* JoinRepublicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRepublicViewController.swift; sourceTree = "<group>"; };
+		3BC6566822848A25003282BA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		BC545FFE2289B1E000BBE2EF /* Members.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Members.storyboard; sourceTree = "<group>"; };
+		BC5460002289B31300BBE2EF /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
+		BC5460022289C73900BBE2EF /* MembersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersTableViewCell.swift; sourceTree = "<group>"; };
+		BCA8B16322849EE1001B0A2E /* AccountCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCreation.swift; sourceTree = "<group>"; };
+		BCA8B1652284B822001B0A2E /* CreateRepublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRepublic.swift; sourceTree = "<group>"; };
+		BCA8B1672285E69F001B0A2E /* JoinRepublic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinRepublic.swift; sourceTree = "<group>"; };
+		BCC6CC5022834B7900A85AC1 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		BCF60AC322820DE800FB545A /* RepublicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepublicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCF60AC622820DE800FB545A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BCF60AC822820DE800FB545A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BCF60ACB22820DE800FB545A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BCF60ACD22820DE900FB545A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCF60AD022820DE900FB545A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BCF60AD222820DE900FB545A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCF60AC022820DE800FB545A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B5871BD2285A19E002CDE9C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				3B5871BE2285A1CB002CDE9C /* ProductsViewController.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		3BC6565022843E4A003282BA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC545FFD2289B1B400BBE2EF /* Members */,
+				3BC65663228488C3003282BA /* Home */,
+				3BC6565122843E57003282BA /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3BC6565122843E57003282BA /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				BCF60ACA22820DE800FB545A /* Main.storyboard */,
+				3BC656602284873C003282BA /* JoinRepublic */,
+				3BC6565D22848527003282BA /* CreateRepublic */,
+				3BC6565822844B0B003282BA /* CreateAccount */,
+				3BC6565222843E60003282BA /* Login */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3BC6565222843E60003282BA /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BCF60AC822820DE800FB545A /* ViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3BC6565322843E82003282BA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BC65654228441C8003282BA /* LoginModel.swift */,
+				BCA8B16322849EE1001B0A2E /* AccountCreation.swift */,
+				BCA8B1652284B822001B0A2E /* CreateRepublic.swift */,
+				BCA8B1672285E69F001B0A2E /* JoinRepublic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BC6565822844B0B003282BA /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				3BC6565B2284595F003282BA /* CreateAccountViewController.swift */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		3BC6565D22848527003282BA /* CreateRepublic */ = {
+			isa = PBXGroup;
+			children = (
+				3BC6565E22848570003282BA /* CreateRepublicViewController.swift */,
+			);
+			path = CreateRepublic;
+			sourceTree = "<group>";
+		};
+		3BC656602284873C003282BA /* JoinRepublic */ = {
+			isa = PBXGroup;
+			children = (
+				3BC656612284875E003282BA /* JoinRepublicViewController.swift */,
+			);
+			path = JoinRepublic;
+			sourceTree = "<group>";
+		};
+		3BC65663228488C3003282BA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3B5871BD2285A19E002CDE9C /* New Group */,
+				3BC6566822848A25003282BA /* Home.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		BC545FFD2289B1B400BBE2EF /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				BC545FFE2289B1E000BBE2EF /* Members.storyboard */,
+				BC5460002289B31300BBE2EF /* MembersViewController.swift */,
+				BC5460022289C73900BBE2EF /* MembersTableViewCell.swift */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		BCF60ABA22820DE800FB545A = {
+			isa = PBXGroup;
+			children = (
+				BCF60AC522820DE800FB545A /* RepublicApp */,
+				BCF60AC422820DE800FB545A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCF60AC422820DE800FB545A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCF60AC322820DE800FB545A /* RepublicApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCF60AC522820DE800FB545A /* RepublicApp */ = {
+			isa = PBXGroup;
+			children = (
+				BCF60AC622820DE800FB545A /* AppDelegate.swift */,
+				BCC6CC5022834B7900A85AC1 /* RoundButton.swift */,
+				3BC6565322843E82003282BA /* Models */,
+				3BC6565022843E4A003282BA /* Views */,
+				BCF60ACD22820DE900FB545A /* Assets.xcassets */,
+				BCF60ACF22820DE900FB545A /* LaunchScreen.storyboard */,
+				BCF60AD222820DE900FB545A /* Info.plist */,
+				3BC6565622844266003282BA /* Validation.swift */,
+				3BC656592284575C003282BA /* AutoScroll.swift */,
+			);
+			path = RepublicApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCF60AC222820DE800FB545A /* RepublicApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCF60AD522820DE900FB545A /* Build configuration list for PBXNativeTarget "RepublicApp" */;
+			buildPhases = (
+				BCF60ABF22820DE800FB545A /* Sources */,
+				BCF60AC022820DE800FB545A /* Frameworks */,
+				BCF60AC122820DE800FB545A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RepublicApp;
+			productName = RepublicApp;
+			productReference = BCF60AC322820DE800FB545A /* RepublicApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCF60ABB22820DE800FB545A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Guilherme Enes";
+				TargetAttributes = {
+					BCF60AC222820DE800FB545A = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+				};
+			};
+			buildConfigurationList = BCF60ABE22820DE800FB545A /* Build configuration list for PBXProject "RepublicApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCF60ABA22820DE800FB545A;
+			productRefGroup = BCF60AC422820DE800FB545A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCF60AC222820DE800FB545A /* RepublicApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCF60AC122820DE800FB545A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCF60AD122820DE900FB545A /* LaunchScreen.storyboard in Resources */,
+				BCF60ACE22820DE900FB545A /* Assets.xcassets in Resources */,
+				BC545FFF2289B1E000BBE2EF /* Members.storyboard in Resources */,
+				BCF60ACC22820DE800FB545A /* Main.storyboard in Resources */,
+				3BC6566922848A25003282BA /* Home.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCF60ABF22820DE800FB545A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCA8B16422849EE1001B0A2E /* AccountCreation.swift in Sources */,
+				3BC6565C2284595F003282BA /* CreateAccountViewController.swift in Sources */,
+				BCC6CC5122834B7900A85AC1 /* RoundButton.swift in Sources */,
+				BCA8B1682285E69F001B0A2E /* JoinRepublic.swift in Sources */,
+				BCA8B1662284B822001B0A2E /* CreateRepublic.swift in Sources */,
+				3BC65655228441C8003282BA /* LoginModel.swift in Sources */,
+				BCF60AC922820DE800FB545A /* ViewController.swift in Sources */,
+				3B5871BF2285A1CB002CDE9C /* ProductsViewController.swift in Sources */,
+				3BC6565722844266003282BA /* Validation.swift in Sources */,
+				BCF60AC722820DE800FB545A /* AppDelegate.swift in Sources */,
+				BC5460012289B31300BBE2EF /* MembersViewController.swift in Sources */,
+				3BC656622284875E003282BA /* JoinRepublicViewController.swift in Sources */,
+				BC5460042289C73900BBE2EF /* MembersTableViewCell.swift in Sources */,
+				3BC6565F22848570003282BA /* CreateRepublicViewController.swift in Sources */,
+				3BC6565A2284575C003282BA /* AutoScroll.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BCF60ACA22820DE800FB545A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCF60ACB22820DE800FB545A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BCF60ACF22820DE900FB545A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCF60AD022820DE900FB545A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCF60AD322820DE900FB545A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BCF60AD422820DE900FB545A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCF60AD622820DE900FB545A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V894BS73ZJ;
+				INFOPLIST_FILE = RepublicApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.AcademyNakeds.RepublicApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCF60AD722820DE900FB545A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V894BS73ZJ;
+				INFOPLIST_FILE = RepublicApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.AcademyNakeds.RepublicApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCF60ABE22820DE800FB545A /* Build configuration list for PBXProject "RepublicApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF60AD322820DE900FB545A /* Debug */,
+				BCF60AD422820DE900FB545A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCF60AD522820DE900FB545A /* Build configuration list for PBXNativeTarget "RepublicApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCF60AD622820DE900FB545A /* Debug */,
+				BCF60AD722820DE900FB545A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCF60ABB22820DE800FB545A /* Project object */;
+}
