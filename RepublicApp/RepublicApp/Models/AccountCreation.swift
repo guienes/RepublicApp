@@ -13,8 +13,8 @@ class AccoountCreationModel : UIViewController {
     
     func validateFields(nome: String?,telephone: String?, confirmpassword:String?, email: String?, password: String?) -> (Bool,String){
         if let nome = nome, nome.isEmpty == false{
-            if let email = email, isValidEmail(testStr: email){
-                if let telephone = telephone{
+            if let email = email, email.isEmpty == false {
+                if let telephone = telephone, telephone.isEmpty == false{
                     if let password = password, isPasswordValid(password: password){
                         if let confirmpassword = confirmpassword, password == confirmpassword{
                             return (true,"")

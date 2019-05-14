@@ -12,9 +12,24 @@ class ProductsViewController: UIViewController {
     
     @IBOutlet var views: [ProductView]!
     @IBOutlet var titleViews: [UIView]!
-    @IBOutlet weak var tableViewTeste: UITableView!
+    
+    @IBOutlet weak var itemTextField: UITextField!
+    
+    @IBOutlet weak var qtdLabel: UILabel!
+    
+    @IBOutlet weak var yesView: UIView!
+    @IBOutlet weak var yesLabel: UILabel!
+    @IBOutlet weak var noView: UIView!
+    @IBOutlet weak var noLabel: UILabel!
+    
+    @IBOutlet weak var despensaComumTableView: UITableView!
+    @IBOutlet weak var despensaPessoalTableView: UITableView!
+    @IBOutlet weak var comprasComumTableView: UITableView!
+    @IBOutlet weak var comprasPessoalTableView: UITableView!
+    
    
     let productCell = "ProductTableViewCell"
+    let model = ProductsViewModel()
     
     var selectedTag = -1
     let topConsts = [40, 110, 180, 250]
@@ -25,12 +40,13 @@ class ProductsViewController: UIViewController {
         self.registerViewTag()
         self.setShadow()
         self.setupTableView()
+        self.setupSegmetTap()
     }
     
     func setupTableView() {
-        self.tableViewTeste.delegate = self
-        self.tableViewTeste.dataSource = self
-        tableViewTeste.register(UINib(nibName: productCell, bundle: nil), forCellReuseIdentifier: productCell)
+        self.comprasPessoalTableView.delegate = self
+        self.comprasPessoalTableView.dataSource = self
+        comprasPessoalTableView.register(UINib(nibName: productCell, bundle: nil), forCellReuseIdentifier: productCell)
 
     }
     
@@ -53,11 +69,24 @@ class ProductsViewController: UIViewController {
         let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.didTapView(_:)))
         let tap3 = UITapGestureRecognizer(target: self, action: #selector(self.didTapView(_:)))
         let tap4 = UITapGestureRecognizer(target: self, action: #selector(self.didTapView(_:)))
-
+        let dismissTap = UITapGestureRecognizer(target: self, action: #selector(teste))
         self.titleViews[0].addGestureRecognizer(tap)
         self.titleViews[1].addGestureRecognizer(tap2)
         self.titleViews[2].addGestureRecognizer(tap3)
         self.titleViews[3].addGestureRecognizer(tap4)
+        self.view.addGestureRecognizer(dismissTap)
+    }
+    
+    @objc func teste() {
+        self.itemTextField.endEditing(true)
+    }
+    
+    func setupSegmetTap() {
+        let tapYes = UITapGestureRecognizer(target: self, action: #selector(didTapYes))
+        let tapNo = UITapGestureRecognizer(target: self, action: #selector(didTapNo))
+        
+        self.yesView.addGestureRecognizer(tapYes)
+        self.noView.addGestureRecognizer(tapNo)
     }
     
     @objc func didTapView(_ sender: UITapGestureRecognizer) {
@@ -80,6 +109,22 @@ class ProductsViewController: UIViewController {
         }
     }
     
+    @objc func didTapYes() {
+        yesView.backgroundColor = .white
+        yesLabel.textColor = UIColor(red: 135/255.0, green: 81/255.0, blue: 131/255.0, alpha: 1)
+        noView.backgroundColor = .clear
+        noLabel.textColor = .white
+        model.isConstant = true
+    }
+    
+    @objc func didTapNo() {
+        noView.backgroundColor = .white
+        noLabel.textColor = UIColor(red: 135/255.0, green: 81/255.0, blue: 131/255.0, alpha: 1)
+        yesView.backgroundColor = .clear
+        yesLabel.textColor = .white
+        model.isConstant = false
+    }
+    
     func sendAllDown() {
         var const:CGFloat = 130
         for view in views {
@@ -95,7 +140,43 @@ class ProductsViewController: UIViewController {
             views[i].getAllConstraints().first { $0.identifier == "bottom" }?.constant = -40
         }
     }
-
+    
+    //MARK:- Add Buttons
+    func moveAllDownForAdd() {
+        self.sendAllDown()
+        selectedTag = 5
+        UIView.animate(withDuration: 0.6) {
+            self.view.layoutIfNeeded()
+            
+        }
+    }
+    
+    @IBAction func despensaComumTap(_ sender: Any) {
+        moveAllDownForAdd()
+    }
+    
+    @IBAction func despensaPessoalTap(_ sender: Any) {
+        moveAllDownForAdd()
+    }
+    
+    @IBAction func comprasComumTap(_ sender: Any) {
+        moveAllDownForAdd()
+    }
+    
+    @IBAction func comprasPessoalTap(_ sender: Any) {
+        moveAllDownForAdd()
+    }
+    
+    //MARK: - Create Buttons
+    @IBAction func lessButtonTap(_ sender: Any) {
+        self.qtdLabel.text = String(model.lessQtd())
+    }
+    @IBAction func moreButtonTap(_ sender: Any) {
+        self.qtdLabel.text = String(model.addQtd())
+    }
+    @IBAction func createButtonTap(_ sender: Any) {
+    }
+    
 }
 
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -109,7 +190,7 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableViewTeste.dequeueReusableCell(withIdentifier: productCell, for: indexPath) as! ProductTableViewCell
+        let cell = comprasPessoalTableView.dequeueReusableCell(withIdentifier: productCell, for: indexPath) as! ProductTableViewCell
         return cell
     }
     

@@ -14,18 +14,18 @@ class Products {
 
 class Product {
     var name: String?
+    var id: String?
     var quantity: Int?
     var isComum: Bool?
     var isRecorrente: Bool?
     var isListBuy: Bool?
-//    var designation: //mudar de string para userr
-//    var republic: //Mudar para republic
+    var designation: String? //mudar de string para userr
+    var republic: String?//id
 }
 
-
-func getDishes(_ url: String, completion: @escaping (Product?, Error?) -> Void) {
+func getProducts(idProduct: String, completion: @escaping (Bool?, Error?, [Product]?) -> Void) {
     do {
-        if let file = URL(string: url) {
+        if let file = URL(string: "https://republicanapp.herokuapp.com/api/product/\(idProduct)/") {
             let data = try Data(contentsOf: file)
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let object = json as? [String: Any] {
@@ -33,32 +33,43 @@ func getDishes(_ url: String, completion: @escaping (Product?, Error?) -> Void) 
                 print(object)
                 
             } else if let object = json as? [Any] {
+                var products = [Product]()
                 for anItem in object as! [Dictionary<String, AnyObject>] {
                     if ((anItem["name"] != nil) && (anItem["_id"] != nil)){
                         
                         let name = anItem["name"] as! String
-                        let price = anItem["price"] as! String
+                        let quantity = anItem["quantity"] as! Int
                         let id = anItem["_id"] as! String
                         
-                        let image = anItem["image"] as! String
-                        let comment = anItem["comment"] as! String
-                        let type = anItem["type"] as! String
-                        let ingredients = anItem["ingredients"] as! String
-                        
-//                        let dish = Dish(name, price, id, 0, image, comment, type, ingredients)
+                        let isComum = anItem["isComum"] as! Bool
+                        let isRecorrente = anItem["isRecorrente"] as! Bool
+                        let isListBuy = anItem["isListBuy"] as! Bool
+                        let designation = anItem["designation"] as! String
+                        let republic = anItem["republic"] as! String
+
+                        let product = Product()
+                        product.quantity = quantity
+                        product.name = name
+                        product.id = id
+                        product.isComum = isComum
+                        product.isRecorrente = isRecorrente
+                        product.isListBuy = isListBuy
+                        product.designation = designation
+                        product.republic = republic
+
+                        //                        let dish = Dish(name, price, id, 0, image, comment, type, ingredients)
                         //                        (dishName, dishPrice, dishID, 0)
-                        
-//                        dish.create()
+                        products.append(product)
                     }
                 }
-//                completion(nil, nil)
+                completion(true, nil, products)
             } else {
                 print("JSON is invalid")
-                completion(nil, nil)
+                completion(false, nil, nil)
             }
         } else {
             print("no file")
-            completion(nil, nil)
+            completion(false, nil, nil)
         }
     } catch {
         print(error.localizedDescription)

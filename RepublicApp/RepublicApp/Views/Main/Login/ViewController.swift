@@ -35,17 +35,44 @@ class LoginViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = true
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "loginSegue" {
-            let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
-            if !valid {
-                self.errorLabel.isHidden = false
-                self.errorLabel.text = message
-            }
-            return valid
-        }
-        return true
+    @IBAction func didTapNext(_ sender: Any) {
+        postLogin()
+//        self.performSegue(withIdentifier: "republicSegue", sender: self)
+
     }
+
+    func postLogin() {
+        var response: [String : Any]?
+        let group = DispatchGroup() // initialize the async
+        var called = false
+        group.enter()
+        let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
+        if valid {
+            login(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "") { (result, error) in
+                if !called {
+                    if let re = result {
+                        response = re
+                        called = true
+                        group.leave()
+                        
+                    }
+                }
+            }
+        } else {
+            self.errorLabel.isHidden = false
+            self.errorLabel.text = message
+        }
+        
+        group.notify(queue: .main) {
+//            let check = response["result"] as? String
+            if let response = response {
+                self.performSegue(withIdentifier: "republicSegue", sender: self)
+            } else {
+                //error
+            }
+        }
+    }
+
 }
 
 extension LoginViewController: UITextFieldDelegate {

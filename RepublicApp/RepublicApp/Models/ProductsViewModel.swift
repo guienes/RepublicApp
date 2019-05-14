@@ -17,6 +17,9 @@ class ProductsViewModel {
     var listaComumProducts = [Product]()
     var listaMinhaProducts = [Product]()
     
+    var isConstant = true 
+    var quantity = 1
+    
     func filterData(){
             for product in products {
                 if let isComum = product.isComum, let isList = product.isListBuy {
@@ -68,5 +71,16 @@ class ProductsViewModel {
         }
     }
     
+    func addQtd() -> Int {
+        self.quantity += 1
+        return quantity
+    }
     
+    func lessQtd() -> Int {
+        if quantity <= 1 {
+            return 1
+        }
+        self.quantity -= 1
+        return quantity
+    }
 }

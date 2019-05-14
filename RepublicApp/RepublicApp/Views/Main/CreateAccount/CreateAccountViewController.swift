@@ -30,22 +30,43 @@ class CreateAccountViewController: UIViewController {
         scrollView.contentInset = inset
     }
     
-
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "CreationSegue" {
-            let (valid, message) = model.validateFields(nome: createNameTextField.text, telephone: Telephone.text, confirmpassword: confirmPass.text, email: Telephone.text, password: CreatePassword.text)
-            
-            
-            //            let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
-            if !valid {
-                self.errorLabel.isHidden = false
-                self.errorLabel.text = message
-            }
-            return valid
-        }
-        return true
+    @IBAction func didTapCreate(_ sender: Any) {
+        self.createAccount()
     }
     
+    func createAccount() {
+        var response: [String : Any]?
+        let group = DispatchGroup() // initialize the async
+        var called = false
+        let (valid, message) = model.validateFields(nome: createNameTextField.text, telephone: Telephone.text, confirmpassword: confirmPass.text, email: Telephone.text, password: CreatePassword.text)
+        if valid {
+            signUp(name: createNameTextField.text!, email: CreateEmail.text!, password: CreatePassword.text!, phone: Telephone.text!, picture: "teste") { (result, error) in
+                if !called {
+                    if let re = result {
+                        response = re
+                        called = true
+                        group.leave()
+                        
+                    }
+                }
+            }
+        } else {
+            self.errorLabel.isHidden = false
+            self.errorLabel.text = message
+        }
+        
+        group.notify(queue: .main) {
+            //            let check = response["result"] as? String
+            if let response = response {
+            
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                //error
+            }
+        }
+        
+    }
+
 }
 
 extension CreateAccountViewController: UITextFieldDelegate{

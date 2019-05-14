@@ -59,7 +59,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="xu7-5f-WB0" kind="show" identifier="loginSegue" id="d9e-1b-YhX"/>
+                                    <action selector="didTapNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G4r-cZ-9M8"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="xgw-Kf-ZIi">
@@ -156,6 +156,7 @@
                         <outlet property="emailTextField" destination="lSV-uT-447" id="CZH-HV-PiT"/>
                         <outlet property="errorLabel" destination="22I-Pa-rkZ" id="4hf-SD-eE3"/>
                         <outlet property="passwordTextField" destination="cEL-k3-lbq" id="8Q7-cV-W9i"/>
+                        <segue destination="xu7-5f-WB0" kind="show" identifier="republicSegue" id="Htf-Tm-qF4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -329,7 +330,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="xu7-5f-WB0" kind="show" identifier="CreationSegue" id="V3P-zQ-EMa"/>
+                                                    <action selector="didTapCreate:" destination="OZ6-N8-IbG" eventType="touchUpInside" id="pSo-wq-cpc"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="Q8x-0x-VwH">
@@ -389,6 +390,7 @@
                         <outlet property="createNameTextField" destination="gJc-KE-f4z" id="1LE-G0-kyB"/>
                         <outlet property="errorLabel" destination="usl-x8-uHI" id="KxR-95-58I"/>
                         <outlet property="scrollView" destination="gRU-bh-oT4" id="O42-EN-fCz"/>
+                        <segue destination="xu7-5f-WB0" kind="show" identifier="createAccountSegue" id="fgv-wL-rG8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfC-o7-hJJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,7 +400,7 @@
         <!--Title-->
         <scene sceneID="TV0-4Y-UXR">
             <objects>
-                <viewController id="xu7-5f-WB0" sceneMemberID="viewController">
+                <viewController id="xu7-5f-WB0" customClass="JoinRepublic" customModule="RepublicApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wB8-1c-eW3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -827,8 +829,8 @@
         <image name="seta" width="23" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eBw-QP-GQx"/>
-        <segue reference="d9e-1b-YhX"/>
+        <segue reference="ZtY-Tn-uWk"/>
+        <segue reference="Htf-Tm-qF4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

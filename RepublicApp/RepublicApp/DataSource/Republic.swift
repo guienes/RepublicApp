@@ -1,26 +1,18 @@
+
 //
-//  File.swift
+//  Republic.swift
 //  RepublicApp
 //
-//  Created by Felipe Kaça Petersen on 13/05/19.
+//  Created by Felipe Kaça Petersen on 14/05/19.
 //  Copyright © 2019 Guilherme Enes. All rights reserved.
 //
 
 import Foundation
 
-class User {
-    var name: String?
-    var id: String?
-    var email: String?
-    var password: String?
-    var phone: String?
-}
-
-//SignUp Request
-func signUp(name: String, email: String, password: String, phone: String, picture: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
-    let parameters = ["name": name, "email": email, "password": password, "phone": phone, "picture": "teste"]
+func createRepublic(name: String, password: String, picture: String, members: String,  completion: @escaping ([String: Any]?, Error?) -> Void) {
+    let parameters = ["name": name, members: "members", "password": password, "picture": "teste"]
     //create the url with NSURL
-    let url = URL(string: "https://republicanapp.herokuapp.com/api/signup/")!
+    let url = URL(string: "https://republicanapp.herokuapp.com/api/createRepublic/")!
     
     //create the session object
     let session = URLSession.shared
@@ -90,11 +82,10 @@ func signUp(name: String, email: String, password: String, phone: String, pictur
 }
 
 
-//Login Request
-func login(email: String, password: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
-    let parameters = ["email": email, "password": password]
+func joinRepublic(idRepublic: String, idUser: String, password: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
+    let parameters = ["idRepublic": idRepublic, "idUser": idUser, "password": password]
     //create the url with NSURL
-    let url = URL(string: "https://republicanapp.herokuapp.com/api/login/")!
+    let url = URL(string: "https://republicanapp.herokuapp.com/api/joinRepublic/")!
     
     //create the session object
     let session = URLSession.shared
@@ -135,17 +126,15 @@ func login(email: String, password: String, completion: @escaping ([String: Any]
             if let file = data {
                 let json = try JSONSerialization.jsonObject(with: file, options: []) as! [String:Any]
                 print(json)
-                for (key, value) in json { //key é o parametro e value o valor
+                for (key, value) in json {
                     if (key == "result"){
                         if(value as? Int == 0){
-                            completion(nil, error)
+                            completion(nil, nil)
                         } else {
-                            completion(nil, error)
+                            completion(json, nil)
                         }
                     } else {
-                        let user = User()
-                        user.name = json["name"] as! String
-                        completion(json, nil)
+                        completion(nil, nil)
                     }
                 }
                 
@@ -163,4 +152,52 @@ func login(email: String, password: String, completion: @escaping ([String: Any]
     
     task.resume()
     
+}
+
+func getMembers(republicId: String, completion: @escaping (Bool?, Error?, [User]?) -> Void) {
+    do {
+        if let file = URL(string: "https://republicanapp.herokuapp.com/api/republicMembers/\(republicId)/") {
+            let data = try Data(contentsOf: file)
+            let json = try JSONSerialization.jsonObject(with: data, options: [])
+            if let object = json as? [String: Any] {
+                
+                print(object)
+                
+            } else if let object = json as? [Any] {
+                var users = [User]()
+                for anItem in object as! [Dictionary<String, AnyObject>] {
+                    if ((anItem["name"] != nil) && (anItem["_id"] != nil)){
+                        
+                        
+                        
+                        let name = anItem["name"] as! String
+                        let email = anItem["email"] as! String
+                        let id = anItem["_id"] as! String
+                        
+                        let phone = anItem["phone"] as! String
+                        let password = anItem["password"] as! String
+                        
+                        let user = User()
+                        user.email = email
+                        user.name = name
+                        user.id = id
+                        user.phone = phone
+                        user.password = password
+//                        let dish = Dish(name, price, id, 0, image, comment, type, ingredients)
+                        //                        (dishName, dishPrice, dishID, 0)
+                        users.append(user)
+                    }
+                }
+                completion(true, nil, users)
+            } else {
+                print("JSON is invalid")
+                completion(false, nil, nil)
+            }
+        } else {
+            print("no file")
+            completion(false, nil, nil)
+        }
+    } catch {
+        print(error.localizedDescription)
+    }
 }
