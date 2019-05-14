@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wave" translatesAutoresizingMaskIntoConstraints="NO" id="QWr-eh-fe2">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="203"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="16"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRY-du-NDx">
                                 <rect key="frame" x="129" y="62" width="156" height="156"/>
@@ -33,7 +33,7 @@
                                 <rect key="frame" x="141" y="74" width="132" height="132"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="blh-tI-kdr">
-                                <rect key="frame" x="0.0" y="331" width="414" height="531"/>
+                                <rect key="frame" x="0.0" y="328" width="414" height="534"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MembersTableViewCell" rowHeight="114" id="7SL-v9-2wL" customClass="MembersTableViewCell" customModule="RepublicApp" customModuleProvider="target">
@@ -44,7 +44,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="border" translatesAutoresizingMaskIntoConstraints="NO" id="dok-gM-8O1">
-                                                    <rect key="frame" x="11" y="5" width="394" height="95"/>
+                                                    <rect key="frame" x="11" y="5" width="394" height="95.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1G5-5h-fRi">
                                                     <rect key="frame" x="111" y="23" width="46" height="20.5"/>
@@ -105,7 +105,7 @@
                                 </prototypes>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MembrosText" translatesAutoresizingMaskIntoConstraints="NO" id="TZ1-dA-nn7">
-                                <rect key="frame" x="25" y="304" width="107.00000000000003" height="19"/>
+                                <rect key="frame" x="25" y="304" width="16" height="16"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Rep" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikl-NH-n7d">
                                 <rect key="frame" x="155" y="226" width="105" height="28"/>
