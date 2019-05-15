@@ -17,6 +17,10 @@ class ProductsViewModel {
     var listaComumProducts = [Product]()
     var listaMinhaProducts = [Product]()
     
+    var requestNewProduct = Product()
+    var addIsComum: Bool?
+    var addIsList: Bool?
+    
     var isConstant = true 
     var quantity = 1
     

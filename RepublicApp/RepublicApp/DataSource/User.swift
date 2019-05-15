@@ -145,6 +145,17 @@ func login(email: String, password: String, completion: @escaping ([String: Any]
                     } else {
                         let user = User()
                         user.name = json["name"] as! String
+                        user.id = json["_id"] as! String
+                        user.email = json["email"] as! String
+                        user.password = json["password"] as! String
+                        user.phone = json["phone"] as! String
+                        
+                        let userDefaults = UserDefaults.standard
+                        userDefaults.set(user.name, forKey: USER_NAME)
+                        userDefaults.set(user.id, forKey: USER_ID)
+                        userDefaults.set(user.email, forKey: USER_EMAIL)
+                        userDefaults.set(user.password, forKey: USER_PASSWORD)
+                        userDefaults.set(user.phone, forKey: USER_PHONE)
                         completion(json, nil)
                     }
                 }

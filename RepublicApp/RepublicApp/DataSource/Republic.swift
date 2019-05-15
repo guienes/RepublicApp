@@ -10,7 +10,7 @@
 import Foundation
 
 func createRepublic(name: String, password: String, picture: String, members: String,  completion: @escaping ([String: Any]?, Error?) -> Void) {
-    let parameters = ["name": name, members: "members", "password": password, "picture": "teste"]
+    let parameters = ["name": name, "members": members, "password": password, "picture": "teste"]
     //create the url with NSURL
     let url = URL(string: "https://republicanapp.herokuapp.com/api/createRepublic/")!
     
@@ -58,6 +58,7 @@ func createRepublic(name: String, password: String, picture: String, members: St
                         if(value as? Int == 0){
                             completion(nil, nil)
                         } else {
+                            UserDefaults.standard.set(value, forKey: REPUBLIC_ID)
                             completion(json, nil)
                         }
                     } else {

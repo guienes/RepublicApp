@@ -36,19 +36,43 @@ class CreateRepublicViewController: UIViewController {
         scrollView.contentInset = inset
     }
     
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "CreateRepublic" {
-            let (valid, message) = model.validateFields(republicname: repNameTextField.text, acesspassword: passwordTextField.text, confirmacesspassword: confirmPassTextField.text)
-            
-            //            let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
-            if !valid {
-                self.errorLabel.text = message
-                self.errorLabel.isHidden = false
+    func create() {
+        var response: [String : Any]?
+        let group = DispatchGroup() // initialize the async
+        var called = false
+        group.enter()
+         let (valid, message) = model.validateFields(republicname: repNameTextField.text, acesspassword: passwordTextField.text, confirmacesspassword: confirmPassTextField.text)
+        if valid {
+            createRepublic(name: self.repNameTextField.text!, password: passwordTextField.text!, picture: "teste", members: UserDefaults.standard.string(forKey: USER_ID) ?? "") { (result, error) in
+                if !called {
+                    if let re = result {
+                        response = re
+                        called = true
+                        group.leave()
+                    }
+                }
             }
-            return valid
+        } else {
+            self.errorLabel.isHidden = false
+            self.errorLabel.text = message
         }
-        return true
+        
+        group.notify(queue: .main) {
+            //            let check = response["result"] as? String
+            if let response = response {
+                UserDefaults.standard.set(self.repNameTextField.text, forKey: REPUBLIC_NAME)
+                self.performSegue(withIdentifier: "createRepublicSegue", sender: self)
+            } else {
+                //error
+            }
+        }
     }
+    
+    @IBAction func createTap(_ sender: Any) {
+        create()
+    }
+    
+    
 }
 
 extension CreateRepublicViewController: UITextFieldDelegate{

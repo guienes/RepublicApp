@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HXG-kF-rwv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lyw-X7-e2H">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Products View Controller-->
+        <!--Members-->
+        <scene sceneID="3VY-wS-dpb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Members" id="P5d-eI-R6b" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wqo-YV-oLP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nE-RX-0ie" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="721" y="-445"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="SJu-hI-AS1">
             <objects>
                 <viewController id="HXG-kF-rwv" customClass="ProductsViewController" customModule="RepublicApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,10 +29,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_home" translatesAutoresizingMaskIntoConstraints="NO" id="PlT-9x-XRk">
-                                <rect key="frame" x="0.0" y="-56" width="414" height="918"/>
+                                <rect key="frame" x="0.0" y="-56" width="414" height="869"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfF-qQ-AhZ">
-                                <rect key="frame" x="11.5" y="221.5" width="391" height="463"/>
+                                <rect key="frame" x="11.5" y="197" width="391" height="463"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="OKO-Oh-UCW">
                                         <rect key="frame" x="16" y="32" width="359" height="399"/>
@@ -199,7 +209,7 @@
                                 </constraints>
                             </view>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RaO-bc-3bE" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="84" width="414" height="769"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ofW-Uf-ihb">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -247,7 +257,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TXO-80-hrc">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="748"/>
+                                        <rect key="frame" x="0.0" y="70" width="414" height="699"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -271,10 +281,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Amg-cQ-dpA" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="154" width="414" height="748"/>
+                                <rect key="frame" x="0.0" y="154" width="414" height="699"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1VX-I3-Ar4">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="678"/>
+                                        <rect key="frame" x="0.0" y="70" width="414" height="629"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsb-mB-g1Q">
@@ -346,7 +356,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPE-20-Ypr" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="224" width="414" height="678"/>
+                                <rect key="frame" x="0.0" y="224" width="414" height="629"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hb5-m3-hM5">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -394,7 +404,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lbj-S7-70Y">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="608"/>
+                                        <rect key="frame" x="0.0" y="70" width="414" height="559"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -418,7 +428,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ja4-Og-gbQ" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="294" width="414" height="608"/>
+                                <rect key="frame" x="0.0" y="294" width="414" height="559"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPb-xt-neQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
@@ -466,7 +476,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mby-sw-7Je">
-                                        <rect key="frame" x="0.0" y="70" width="414" height="538"/>
+                                        <rect key="frame" x="0.0" y="70" width="414" height="489"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -517,6 +527,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mRp-tS-nQa"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="bjP-qd-iNT"/>
                     <connections>
                         <outlet property="comprasComumTableView" destination="Lbj-S7-70Y" id="Lgx-9e-5uc"/>
                         <outlet property="comprasPessoalTableView" destination="Mby-sw-7Je" id="EAL-hK-EKX"/>
@@ -539,6 +550,33 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUv-kY-M96" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="805.79710144927537" y="50.892857142857139"/>
+        </scene>
+        <!--tasksHome-->
+        <scene sceneID="XSw-M5-65g">
+            <objects>
+                <viewControllerPlaceholder storyboardName="tasksHome" id="9zg-b0-uJa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fgd-ak-zAE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="892" y="532"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="olO-gh-6cK">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="lyw-X7-e2H" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OSp-h4-equ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="HXG-kF-rwv" kind="relationship" relationship="viewControllers" id="uKh-SZ-xOY"/>
+                        <segue destination="P5d-eI-R6b" kind="relationship" relationship="viewControllers" id="tN8-gb-jAG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANp-Bm-cQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-104.34782608695653" y="50.892857142857139"/>
         </scene>

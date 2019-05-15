@@ -19,6 +19,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     
     let model = AccoountCreationModel()
+    var called = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,15 +37,16 @@ class CreateAccountViewController: UIViewController {
     
     func createAccount() {
         var response: [String : Any]?
-        let group = DispatchGroup() // initialize the async
-        var called = false
+        let group = DispatchGroup()
+        group.enter()
+// initialize the async
         let (valid, message) = model.validateFields(nome: createNameTextField.text, telephone: Telephone.text, confirmpassword: confirmPass.text, email: Telephone.text, password: CreatePassword.text)
         if valid {
             signUp(name: createNameTextField.text!, email: CreateEmail.text!, password: CreatePassword.text!, phone: Telephone.text!, picture: "teste") { (result, error) in
-                if !called {
+                if !self.called {
                     if let re = result {
                         response = re
-                        called = true
+                        self.called = true
                         group.leave()
                         
                     }
@@ -59,7 +61,7 @@ class CreateAccountViewController: UIViewController {
             //            let check = response["result"] as? String
             if let response = response {
             
-                self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "unwindToLogin", sender: self)
             } else {
                 //error
             }

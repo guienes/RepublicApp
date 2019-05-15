@@ -13,4 +13,7 @@ let USER_EMAIL = "useremail"
 let USER_PHONE = "userphone"
 let USER_PICTURE = "userpicture"
 let USER_ID = "userid"
+let USER_PASSWORD = "userpassword"
 
+let REPUBLIC_ID = "republicid"
+let REPUBLIC_NAME = "republicname"

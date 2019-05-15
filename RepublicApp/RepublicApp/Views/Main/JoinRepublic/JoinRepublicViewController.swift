@@ -32,18 +32,41 @@ class JoinRepublicViewController: UIViewController {
     override func setScrollViewContentInset(_ inset: UIEdgeInsets) {
         scrollView.contentInset = inset
     }
-
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "JoinRepublic" {
-            let(valid,message) = model.validateFields(republicID: republicIDTextField.text, republicPassword: republicPasswordTextField.text)
-            if !valid {
-                self.errorLabel.text = message
-                self.errorLabel.isHidden = false
+    
+    func join() {
+        var response: [String : Any]?
+        let group = DispatchGroup() // initialize the async
+        var called = false
+        group.enter()
+        let(valid,message) = model.validateFields(republicID: republicIDTextField.text, republicPassword: republicPasswordTextField.text)
+        if valid {
+            joinRepublic(idRepublic: republicIDTextField.text!, idUser: UserDefaults.standard.string(forKey: USER_ID) ?? "", password: republicIDTextField.text!) { (result, error) in
+                if !called {
+                    if let re = result {
+                        response = re
+                        called = true
+                        group.leave()
+                    }
+                }
             }
-            return valid
-         }
-        return true
-       }
+        } else {
+            self.errorLabel.isHidden = false
+            self.errorLabel.text = message
+        }
+        
+        group.notify(queue: .main) {
+            //            let check = response["result"] as? String
+            if let response = response {
+                self.performSegue(withIdentifier: "joinRepublicSegue", sender: self)
+            } else {
+                //error
+            }
+        }
+    }
+    
+    @IBAction func enterTap(_ sender: Any) {
+        join()
+    }
 }
 
 extension JoinRepublicViewController: UITextFieldDelegate {

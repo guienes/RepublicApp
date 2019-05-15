@@ -41,6 +41,8 @@ class ProductsViewController: UIViewController {
         self.setShadow()
         self.setupTableView()
         self.setupSegmetTap()
+        self.products()
+        registerTableView()
     }
     
     func setupTableView() {
@@ -56,6 +58,13 @@ class ProductsViewController: UIViewController {
             view.tag = tag
             tag += 1
         }
+    }
+    
+    func registerTableView() {
+        self.despensaComumTableView.tag = 1
+        self.despensaPessoalTableView.tag = 2
+        self.comprasComumTableView.tag = 3
+        self.comprasPessoalTableView.tag = 4
     }
     
     func setShadow() {
@@ -141,30 +150,61 @@ class ProductsViewController: UIViewController {
         }
     }
     
+    //MARK:-Get Products
+    func products() {
+        let group = DispatchGroup() // initialize the async
+        var called = false
+        group.enter()
+        getProducts(idRepublic: UserDefaults.standard.string(forKey: REPUBLIC_ID) ?? "") { (result, error, products) in
+            if !called {
+                if let prod = products {
+                    self.model.products = prod
+                    called = true
+                    group.leave()
+                }
+            }
+        }
+        group.notify(queue: .main) {
+            //            let check = response["result"] as? String
+            self.model.filterData()
+            self.despensaPessoalTableView.reloadData()
+            self.despensaComumTableView.reloadData()
+            self.comprasComumTableView.reloadData()
+            self.comprasPessoalTableView.reloadData()
+        }
+    }
+    
     //MARK:- Add Buttons
     func moveAllDownForAdd() {
         self.sendAllDown()
         selectedTag = 5
         UIView.animate(withDuration: 0.6) {
             self.view.layoutIfNeeded()
-            
         }
     }
     
     @IBAction func despensaComumTap(_ sender: Any) {
         moveAllDownForAdd()
+        model.addIsList = false
+        model.addIsComum = true
     }
     
     @IBAction func despensaPessoalTap(_ sender: Any) {
         moveAllDownForAdd()
+        model.addIsList = false
+        model.addIsComum = false
     }
     
     @IBAction func comprasComumTap(_ sender: Any) {
         moveAllDownForAdd()
+        model.addIsList = true
+        model.addIsComum = true
     }
     
     @IBAction func comprasPessoalTap(_ sender: Any) {
         moveAllDownForAdd()
+        model.addIsList = true
+        model.addIsComum = false
     }
     
     //MARK: - Create Buttons
@@ -175,6 +215,42 @@ class ProductsViewController: UIViewController {
         self.qtdLabel.text = String(model.addQtd())
     }
     @IBAction func createButtonTap(_ sender: Any) {
+        if let itemName = itemTextField.text {
+            self.model.requestNewProduct.isComum = self.model.addIsComum
+            self.model.requestNewProduct.isListBuy = self.model.addIsList
+            self.model.requestNewProduct.republic = UserDefaults.standard.string(forKey: REPUBLIC_ID)
+            self.model.requestNewProduct.designation = UserDefaults.standard.string(forKey: USER_ID)
+            self.model.requestNewProduct.quantity = self.model.quantity
+            self.model.requestNewProduct.isRecorrente = self.model.isConstant
+            self.model.requestNewProduct.name = itemName
+            
+            var response: [String : Any]?
+            let group = DispatchGroup() // initialize the async
+            var called = false
+            group.enter()
+            postProduct(product: self.model.requestNewProduct) { (result, error) in
+                if !called {
+                    if let re = result {
+                        response = re
+                        called = true
+                        group.leave()
+                        
+                    }
+                }
+            }
+            group.notify(queue: .main) {
+                //            let check = response["result"] as? String
+                if let response = response {
+                    self.sendAllUp()
+                    self.selectedTag = -1
+                    UIView.animate(withDuration: 0.6) {
+                        self.view.layoutIfNeeded()
+                    }
+                } else {
+                    //error
+                }
+            }
+        }
     }
     
 }
@@ -182,7 +258,15 @@ class ProductsViewController: UIViewController {
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if tableView == despensaComumTableView {
+            return self.model.getNumberOfRows(tableViewIndex: despensaComumTableView.tag)
+        } else if tableView == despensaPessoalTableView {
+            return self.model.getNumberOfRows(tableViewIndex: despensaPessoalTableView.tag)
+        } else if tableView == comprasComumTableView {
+            return self.model.getNumberOfRows(tableViewIndex: comprasComumTableView.tag)
+        } else {
+            return self.model.getNumberOfRows(tableViewIndex: comprasPessoalTableView.tag)
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -190,12 +274,58 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = comprasPessoalTableView.dequeueReusableCell(withIdentifier: productCell, for: indexPath) as! ProductTableViewCell
-        return cell
+        let cell = despensaComumTableView.dequeueReusableCell(withIdentifier: productCell, for: indexPath) as! ProductTableViewCell
+        
+        let cell2 = despensaPessoalTableView.dequeueReusableCell(withIdentifier: productCell, for: indexPath) as! ProductTableViewCell
+
+        let cell3 = comprasComumTableView.dequeueReusableCell(withIdentifier: productCell, for: indexPath) as! ProductTableViewCell
+
+        let cell4 = comprasPessoalTableView.dequeueReusableCell(withIdentifier: productCell, for: indexPath) as! ProductTableViewCell
+
+        cell.delegate = self
+        cell2.delegate = self
+        cell3.delegate = self
+        cell4.delegate = self
+        
+        if tableView == despensaComumTableView {
+            cell.setup(product: self.model.getCellForRow(index: indexPath.row, tableViewIndex: despensaComumTableView.tag))
+            return cell
+        } else if tableView == despensaPessoalTableView {
+            cell2.setup(product: self.model.getCellForRow(index: indexPath.row, tableViewIndex: despensaPessoalTableView.tag))
+            return cell2
+        } else if tableView == comprasComumTableView {
+            cell3.setup(product: self.model.getCellForRow(index: indexPath.row, tableViewIndex: comprasComumTableView.tag))
+            return cell3
+        } else {
+            cell4.setup(product: self.model.getCellForRow(index: indexPath.row, tableViewIndex: comprasPessoalTableView.tag))
+            return cell4
+        }
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("comi o cu do enes")
+}
+
+extension ProductsViewController: ProductTableViewCellDelegate {
+    func deleteCell(id: String) {
+        var response: [String : Any]?
+        let group = DispatchGroup() // initialize the async
+        var called = false
+        deleteProducts(idProduct: id) { (result, error) in
+            if !called {
+                if let re = result {
+                    response = re
+                    called = true
+                    group.leave()
+                    
+                }
+            }
+        }
+        group.notify(queue: .main) {
+            //            let check = response["result"] as? String
+            if let response = response {
+                //alguma coisa quando deletar
+            } else {
+                //error
+            }
+        }
     }
     
     

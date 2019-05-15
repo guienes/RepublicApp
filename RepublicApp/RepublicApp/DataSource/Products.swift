@@ -23,9 +23,9 @@ class Product {
     var republic: String?//id
 }
 
-func getProducts(idProduct: String, completion: @escaping (Bool?, Error?, [Product]?) -> Void) {
+func getProducts(idRepublic: String, completion: @escaping (Bool?, Error?, [Product]?) -> Void) {
     do {
-        if let file = URL(string: "https://republicanapp.herokuapp.com/api/product/\(idProduct)/") {
+        if let file = URL(string: "https://republicanapp.herokuapp.com/api/product/\(idRepublic)/") {
             let data = try Data(contentsOf: file)
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let object = json as? [String: Any] {
@@ -42,7 +42,7 @@ func getProducts(idProduct: String, completion: @escaping (Bool?, Error?, [Produ
                         let id = anItem["_id"] as! String
                         
                         let isComum = anItem["isComum"] as! Bool
-                        let isRecorrente = anItem["isRecorrente"] as! Bool
+                        let isRecorrente = anItem["isRecorrent"] as! Bool
                         let isListBuy = anItem["isListBuy"] as! Bool
                         let designation = anItem["designation"] as! String
                         let republic = anItem["republic"] as! String
@@ -74,4 +74,149 @@ func getProducts(idProduct: String, completion: @escaping (Bool?, Error?, [Produ
     } catch {
         print(error.localizedDescription)
     }
+}
+
+func deleteProducts(idProduct: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
+    let parameters = ["idProduct": idProduct, "idRepublic": UserDefaults.standard.string(forKey: REPUBLIC_ID)]
+    //create the url with NSURL
+    let url = URL(string: "https://republicanapp.herokuapp.com/api/deleteProduct/")!
+    
+    //create the session object
+    let session = URLSession.shared
+    
+    //now create the Request object using the url object
+    var request = URLRequest(url: url)
+    
+    request.httpMethod = "POST" //set http method as POST
+    do {
+        
+        request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to data object and set it as request body
+    } catch let error {
+        print(error.localizedDescription)
+        completion(nil, error)
+    }
+    
+    //HTTP Headers
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Acadresst")
+    
+    //create dataTask using the session object to send data to the server
+    let task = session.dataTask(with: request, completionHandler: { data, response, error in
+        
+        
+        guard error == nil else {
+            completion(nil, error)
+            return
+        }
+        
+        guard data != nil else {
+            completion(nil, NSError(domain: "dataNilError", code: -100001, userInfo: nil))
+            return
+        }
+        
+        do {
+            
+            print(data)
+            if let file = data {
+                let json = try JSONSerialization.jsonObject(with: file, options: []) as! [String:Any]
+                print(json)
+                for (key, value) in json { //key é o parametro e value o valor
+                    if (key == "result"){
+                        if(value as? Int == 0){
+                            completion(nil, error)
+                        } else {
+                            completion(nil, error)
+                        }
+                    } else {
+                        completion(json, nil)
+                    }
+                }
+                
+            } else {
+                
+                print("no file")
+                
+            }
+            
+        } catch {
+            print(error.localizedDescription)
+            
+        }
+    })
+    
+    task.resume()
+    
+}
+
+//Login Request
+func postProduct(product: Product, completion: @escaping ([String: Any]?, Error?) -> Void) {
+    let parameters = ["name": product.name, "quantity": product.quantity, "isComum": product.isComum ?? false, "isRecorrent": product.isRecorrente ?? false, "isListBuy": product.isListBuy, "designation": product.designation, "republic": product.republic] as [String : Any]
+    //create the url with NSURL
+    let url = URL(string: "https://republicanapp.herokuapp.com/api/createProduct/")!
+    
+    //create the session object
+    let session = URLSession.shared
+    
+    //now create the Request object using the url object
+    var request = URLRequest(url: url)
+    
+    request.httpMethod = "POST" //set http method as POST
+    do {
+        
+        request.httpBody = try JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted) // pass dictionary to data object and set it as request body
+    } catch let error {
+        print(error.localizedDescription)
+        completion(nil, error)
+    }
+    
+    //HTTP Headers
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Acadresst")
+    
+    //create dataTask using the session object to send data to the server
+    let task = session.dataTask(with: request, completionHandler: { data, response, error in
+        
+        
+        guard error == nil else {
+            completion(nil, error)
+            return
+        }
+        
+        guard data != nil else {
+            completion(nil, NSError(domain: "dataNilError", code: -100001, userInfo: nil))
+            return
+        }
+        
+        do {
+            
+            print(data)
+            if let file = data {
+                let json = try JSONSerialization.jsonObject(with: file, options: []) as! [String:Any]
+                print(json)
+                for (key, value) in json { //key é o parametro e value o valor
+                    if (key == "result"){
+                        if(value as? Int == 0){
+                            completion(nil, error)
+                        } else {
+                            completion(nil, error)
+                        }
+                    } else {
+                        completion(json, nil)
+                    }
+                }
+                
+            } else {
+                
+                print("no file")
+                
+            }
+            
+        } catch {
+            print(error.localizedDescription)
+            
+        }
+    })
+    
+    task.resume()
+    
 }
