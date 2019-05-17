@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
         group.enter()
         let (valid,message) = model.validateFields(email: emailTextField.text, password: passwordTextField.text) //valid é o bool, e message é a mensagem que aparece meu bom!
         if valid {
+            self.showSpinner(onView: self.view)
             login(email: self.emailTextField.text ?? "", password: self.passwordTextField.text ?? "") { (result, error) in
                 if !called {
                     if let re = result {
@@ -55,6 +56,9 @@ class LoginViewController: UIViewController {
                         called = true
                         group.leave()
                         
+                    } else {
+                        self.removeSpinner()
+                        self.showErrorAlert(title: "Erro", message: "Requisição Falhou")
                     }
                 }
             }
@@ -64,6 +68,7 @@ class LoginViewController: UIViewController {
         }
         
         group.notify(queue: .main) {
+            self.removeSpinner()
 //            let check = response["result"] as? String
             if let response = response {
                 self.performSegue(withIdentifier: "republicSegue", sender: self)

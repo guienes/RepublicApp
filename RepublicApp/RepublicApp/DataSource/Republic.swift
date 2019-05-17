@@ -52,22 +52,12 @@ func createRepublic(name: String, password: String, picture: String, members: St
             print(data)
             if let file = data {
                 let json = try JSONSerialization.jsonObject(with: file, options: []) as! [String:Any]
-                print(json)
-                for (key, value) in json {
-                    if (key == "result"){
-                        if(value as? Int == 0){
-                            completion(nil, nil)
-                        } else {
-                            UserDefaults.standard.set(value, forKey: REPUBLIC_ID)
-                            completion(json, nil)
-                        }
-                    } else {
-                        completion(nil, nil)
-                    }
-                }
+                //TODO:- Salvar o id da republica
+                
+                completion(json, nil)
                 
             } else {
-                
+                completion(nil, nil)
                 print("no file")
                 
             }

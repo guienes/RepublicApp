@@ -26,4 +26,9 @@ class MembersTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setup(user: User) {
+        self.NameUILabel.text = user.name
+        self.TelUserUILabel.text = user.phone
+    }
+    
 }

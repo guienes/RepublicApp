@@ -42,6 +42,8 @@ class CreateAccountViewController: UIViewController {
 // initialize the async
         let (valid, message) = model.validateFields(nome: createNameTextField.text, telephone: Telephone.text, confirmpassword: confirmPass.text, email: Telephone.text, password: CreatePassword.text)
         if valid {
+            self.showSpinner(onView: self.view)
+
             signUp(name: createNameTextField.text!, email: CreateEmail.text!, password: CreatePassword.text!, phone: Telephone.text!, picture: "teste") { (result, error) in
                 if !self.called {
                     if let re = result {
@@ -49,6 +51,9 @@ class CreateAccountViewController: UIViewController {
                         self.called = true
                         group.leave()
                         
+                    } else {
+                        self.removeSpinner()
+                        self.showErrorAlert(title: "Erro", message: "Requisição Falhou")
                     }
                 }
             }
@@ -58,6 +63,7 @@ class CreateAccountViewController: UIViewController {
         }
         
         group.notify(queue: .main) {
+            self.removeSpinner()
             //            let check = response["result"] as? String
             if let response = response {
             

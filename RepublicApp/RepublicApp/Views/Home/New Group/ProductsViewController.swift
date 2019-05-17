@@ -41,8 +41,9 @@ class ProductsViewController: UIViewController {
         self.setShadow()
         self.setupTableView()
         self.setupSegmetTap()
-        self.products()
+//        self.products()
         registerTableView()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     func setupTableView() {
@@ -135,10 +136,10 @@ class ProductsViewController: UIViewController {
     }
     
     func sendAllDown() {
-        var const:CGFloat = 130
+        var const:CGFloat = 220
         for view in views {
             view.getAllConstraints().first { $0.identifier == "top" }?.constant = self.view.frame.height - const
-            view.getAllConstraints().first { $0.identifier == "bottom" }?.constant = -50
+            view.getAllConstraints().first { $0.identifier == "bottom" }?.constant = -300
             const -= 10
         }
     }
@@ -177,7 +178,14 @@ class ProductsViewController: UIViewController {
     //MARK:- Add Buttons
     func moveAllDownForAdd() {
         self.sendAllDown()
-        selectedTag = 5
+//        selectedTag = 5
+        UIView.animate(withDuration: 0.6) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func moveAllUpForAdd() {
+        self.sendAllUp()
         UIView.animate(withDuration: 0.6) {
             self.view.layoutIfNeeded()
         }
@@ -215,42 +223,43 @@ class ProductsViewController: UIViewController {
         self.qtdLabel.text = String(model.addQtd())
     }
     @IBAction func createButtonTap(_ sender: Any) {
-        if let itemName = itemTextField.text {
-            self.model.requestNewProduct.isComum = self.model.addIsComum
-            self.model.requestNewProduct.isListBuy = self.model.addIsList
-            self.model.requestNewProduct.republic = UserDefaults.standard.string(forKey: REPUBLIC_ID)
-            self.model.requestNewProduct.designation = UserDefaults.standard.string(forKey: USER_ID)
-            self.model.requestNewProduct.quantity = self.model.quantity
-            self.model.requestNewProduct.isRecorrente = self.model.isConstant
-            self.model.requestNewProduct.name = itemName
-            
-            var response: [String : Any]?
-            let group = DispatchGroup() // initialize the async
-            var called = false
-            group.enter()
-            postProduct(product: self.model.requestNewProduct) { (result, error) in
-                if !called {
-                    if let re = result {
-                        response = re
-                        called = true
-                        group.leave()
-                        
-                    }
-                }
-            }
-            group.notify(queue: .main) {
-                //            let check = response["result"] as? String
-                if let response = response {
-                    self.sendAllUp()
-                    self.selectedTag = -1
-                    UIView.animate(withDuration: 0.6) {
-                        self.view.layoutIfNeeded()
-                    }
-                } else {
-                    //error
-                }
-            }
-        }
+//        if let itemName = itemTextField.text {
+//            self.model.requestNewProduct.isComum = self.model.addIsComum
+//            self.model.requestNewProduct.isListBuy = self.model.addIsList
+//            self.model.requestNewProduct.republic = UserDefaults.standard.string(forKey: REPUBLIC_ID)
+//            self.model.requestNewProduct.designation = UserDefaults.standard.string(forKey: USER_ID)
+//            self.model.requestNewProduct.quantity = self.model.quantity
+//            self.model.requestNewProduct.isRecorrente = self.model.isConstant
+//            self.model.requestNewProduct.name = itemName
+//
+//            var response: [String : Any]?
+//            let group = DispatchGroup() // initialize the async
+//            var called = false
+//            group.enter()
+//            postProduct(product: self.model.requestNewProduct) { (result, error) in
+//                if !called {
+//                    if let re = result {
+//                        response = re
+//                        called = true
+//                        group.leave()
+//                    }
+//                }
+//            }
+//            group.notify(queue: .main) {
+//                //            let check = response["result"] as? String
+//                if let response = response {
+//                    self.sendAllUp()
+//                    self.selectedTag = -1
+//                    UIView.animate(withDuration: 0.6) {
+//                        self.view.layoutIfNeeded()
+//                    }
+//                } else {
+//                    //error
+//                }
+//            }
+//        }
+//        self.sendAllUp()
+        self.moveAllUpForAdd()
     }
     
 }
@@ -321,6 +330,10 @@ extension ProductsViewController: ProductTableViewCellDelegate {
         group.notify(queue: .main) {
             //            let check = response["result"] as? String
             if let response = response {
+                self.despensaPessoalTableView.reloadData()
+                self.despensaComumTableView.reloadData()
+                self.comprasComumTableView.reloadData()
+                self.comprasPessoalTableView.reloadData()
                 //alguma coisa quando deletar
             } else {
                 //error

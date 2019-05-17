@@ -16,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        var root = UIViewController()
+//        if let _ = UserDefaults.standard.string(forKey: USER_ID), let _ = UserDefaults.standard.string(forKey: REPUBLIC_ID) {
+        if let _ = UserDefaults.standard.string(forKey: USER_ID) {
+            let storyboard = UIStoryboard(name: "Home", bundle: nil)
+
+            root = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UIViewController
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            root = storyboard.instantiateViewController(withIdentifier: "navigationController") as! UIViewController
+        }
+        
+        if let window = self.window{
+            window.rootViewController = root
+        }
         
         return true
     }

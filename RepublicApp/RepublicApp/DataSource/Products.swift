@@ -25,7 +25,7 @@ class Product {
 
 func getProducts(idRepublic: String, completion: @escaping (Bool?, Error?, [Product]?) -> Void) {
     do {
-        if let file = URL(string: "https://republicanapp.herokuapp.com/api/product/\(idRepublic)/") {
+        if let file = URL(string: "https://republicanapp.herokuapp.com/api/products/\(idRepublic)/") {
             let data = try Data(contentsOf: file)
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let object = json as? [String: Any] {

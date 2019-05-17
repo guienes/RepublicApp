@@ -21,5 +21,9 @@ class CellTasksViewController: UICollectionViewCell{
         super.awakeFromNib()
     }
     
+    func setup(task: Task) {
+        TaskTitleUILabel.text = task.name
+        TaskDescriptionUILabel.text = task.desc
+    }
     
 }

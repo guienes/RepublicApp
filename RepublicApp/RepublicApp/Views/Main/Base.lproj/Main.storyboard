@@ -13,7 +13,7 @@
         <!--RepublicApp-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="RepublicApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="RepublicApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,7 +399,7 @@
             </objects>
             <point key="canvasLocation" x="1499" y="717"/>
         </scene>
-        <!--Title-->
+        <!--Repúblicas-->
         <scene sceneID="TV0-4Y-UXR">
             <objects>
                 <viewController id="xu7-5f-WB0" customClass="JoinRepublic" customModule="RepublicApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -455,13 +455,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xBL-3g-SbK"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="YQ3-Js-zBz"/>
+                    <navigationItem key="navigationItem" title="Repúblicas" id="YQ3-Js-zBz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Uk-yY-qEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2346" y="21"/>
         </scene>
-        <!--Conta-->
+        <!--Criar-->
         <scene sceneID="737-g8-dfZ">
             <objects>
                 <viewController id="txL-q9-NRe" customClass="CreateRepublicViewController" customModule="RepublicApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -624,7 +624,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GFz-Pt-QYh"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Conta" id="UEo-jG-315"/>
+                    <navigationItem key="navigationItem" title="Criar" id="UEo-jG-315"/>
                     <connections>
                         <outlet property="confirmPassTextField" destination="T5m-OD-66D" id="6MX-e8-biK"/>
                         <outlet property="errorLabel" destination="rad-5e-8X6" id="rer-d2-JSM"/>
@@ -649,7 +649,7 @@
         <!--Navigation Controller-->
         <scene sceneID="eaw-8R-7cY">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aiP-9g-saI" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aiP-9g-saI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ym7-IC-2Hn">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -667,7 +667,7 @@
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="20.758928571428569"/>
         </scene>
-        <!--Conta-->
+        <!--Entrar-->
         <scene sceneID="XKa-bp-uBu">
             <objects>
                 <viewController id="wBi-c9-ZOz" customClass="JoinRepublicViewController" customModule="RepublicApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -807,7 +807,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gOP-WF-vDY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Conta" id="3ln-sp-vp2"/>
+                    <navigationItem key="navigationItem" title="Entrar" id="3ln-sp-vp2"/>
                     <connections>
                         <outlet property="errorLabel" destination="aa3-aj-Sgx" id="GKy-nH-LLX"/>
                         <outlet property="republicIDTextField" destination="g59-PX-SWa" id="gq9-ZV-brO"/>
@@ -834,7 +834,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="L8M-bF-cPX"/>
-        <segue reference="fgv-wL-rG8"/>
+        <segue reference="Htf-Tm-qF4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

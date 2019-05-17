@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class CellRecorrenteViewController:UITableViewCell{
+    
     @IBOutlet weak var TarefaUILabel: UILabel!
     @IBOutlet weak var DescriptionUILabel: UILabel!
     @IBOutlet weak var PersonImageUIImageView: UIImageView!
@@ -18,6 +19,8 @@ class CellRecorrenteViewController:UITableViewCell{
         super.awakeFromNib()
     }
     
-    
-    
+    func setup(task: Task) {
+        self.DescriptionUILabel.text = task.desc
+        self.TarefaUILabel.text = task.name
+    }
 }
