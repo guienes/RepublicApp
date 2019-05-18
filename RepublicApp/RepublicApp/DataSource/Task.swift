@@ -39,7 +39,7 @@ func getTasks(idRepublic: String, completion: @escaping (Bool?, Error?, [Task]?)
 ////                        if key2
 ////                    }
 //                }
-//                print(object)
+                print(object)
                 
             } else if let object = json as? [Any] {
                 var tasks = [Task]()
@@ -50,7 +50,7 @@ func getTasks(idRepublic: String, completion: @escaping (Bool?, Error?, [Task]?)
                         let desc = anItem["desc"] as! String
                         let id = anItem["_id"] as! String
                         let isRecorrente = anItem["isRecorrent"] as! Bool
-                        let designation = anItem["designation"] as! String
+                        let designation = anItem["designation"] as? String ?? ""
                         let republic = anItem["republic"] as! String
                         
                         let task = Task()
@@ -202,7 +202,7 @@ func postTask(task: Task, completion: @escaping ([String: Any]?, Error?) -> Void
                         if(value as? Int == 0){
                             completion(nil, error)
                         } else {
-                            completion(nil, error)
+                            completion(json, error)
                         }
                     } else {
                         completion(json, nil)

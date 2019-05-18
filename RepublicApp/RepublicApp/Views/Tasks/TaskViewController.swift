@@ -39,7 +39,9 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
         TasksTableView.delegate = self
         TasksTableView.dataSource = self
         viewTaps()
-//        get()
+        model.mockNaoDesignado()
+//        model.mockData()
+        get()
     }
     
     func get() {
@@ -206,6 +208,8 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 //            let check = response["result"] as? String
                 if let response = response {
                     self.sendUp()
+                    self.model.tasks.append( self.model.requestNewTask)
+                    self.model.separateTasks()
                     self.TasksTableView.reloadData()
                     self.collectionView.reloadData()
                 } else {

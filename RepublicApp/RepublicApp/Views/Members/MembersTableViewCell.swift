@@ -13,6 +13,7 @@ class MembersTableViewCell: UITableViewCell {
     @IBOutlet weak var photoViewUIView: UIView!
     @IBOutlet weak var NameUILabel: UILabel!
     @IBOutlet weak var TelUserUILabel: UILabel!
+    @IBOutlet weak var picImageView: UIImageView!
     
     
     override func awakeFromNib() {
@@ -29,6 +30,7 @@ class MembersTableViewCell: UITableViewCell {
     func setup(user: User) {
         self.NameUILabel.text = user.name
         self.TelUserUILabel.text = user.phone
+        self.picImageView.image = UIImage(named: user.pic ?? "")
     }
     
 }

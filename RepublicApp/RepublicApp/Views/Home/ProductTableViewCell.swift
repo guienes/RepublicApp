@@ -34,7 +34,7 @@ class ProductTableViewCell: UITableViewCell {
 
     @IBAction func buttonTap(_ sender: Any) {
         delegate?.deleteCell(id: self.id)
-        self.buttonOutlet.backgroundColor = .black
+        self.buttonOutlet.backgroundColor = UIColor(red: 135/255.0, green: 81/255.0, blue: 131/255.0, alpha: 1)
     }
     
 }

@@ -21,8 +21,41 @@ class ProductsViewModel {
     var addIsComum: Bool?
     var addIsList: Bool?
     
-    var isConstant = true 
+    var isConstant = true
     var quantity = 1
+    
+    func setupMock() {
+        let product = Product()
+        product.name = "Paçoca"
+        product.quantity = 2
+        product.isComum = true
+        product.isListBuy = false
+        products.append(product)
+        
+        let product2 = Product()
+        product2.name = "Abacaxi"
+        product2.quantity = 2
+        product2.isComum = false
+        product2.isListBuy = false
+        products.append(product2)
+        
+        let product3 = Product()
+        product3.name = "Bolacha"
+        product3.quantity = 2
+        product3.isComum = true
+        product3.isListBuy = true
+        products.append(product3)
+        
+        let product4 = Product()
+        product4.name = "Morango"
+        product4.quantity = 2
+        product4.isComum = false
+        product4.isListBuy = true
+        products.append(product4)
+        
+        filterData()
+    }
+    
     
     func filterData(){
             for product in products {
@@ -42,6 +75,7 @@ class ProductsViewModel {
                     }
                 }
             }
+        products.removeAll()
         
     }
     

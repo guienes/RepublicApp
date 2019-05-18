@@ -47,7 +47,7 @@ class CreateRepublicViewController: UIViewController {
 
             createRepublic(name: self.repNameTextField.text!, password: passwordTextField.text!, picture: "teste", members: UserDefaults.standard.string(forKey: USER_ID) ?? "") { (result, error) in
                 if !called {
-                    if result?.values.first as! Int == 1 {
+                    if let re = result {
                         called = true
                         success = true
                         group.leave()

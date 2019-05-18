@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         var root = UIViewController()
-//        if let _ = UserDefaults.standard.string(forKey: USER_ID), let _ = UserDefaults.standard.string(forKey: REPUBLIC_ID) {
-        if let _ = UserDefaults.standard.string(forKey: USER_ID) {
+        if let _ = UserDefaults.standard.string(forKey: USER_ID), let _ = UserDefaults.standard.string(forKey: REPUBLIC_ID) {
+//        if let _ = UserDefaults.standard.string(forKey: USER_ID) {
             let storyboard = UIStoryboard(name: "Home", bundle: nil)
 
             root = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UIViewController
@@ -34,11 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func setRootView() {
-        if UserDefaults.standard.string(forKey: USER_ID) != nil && UserDefaults.standard.string(forKey: REPUBLIC_ID) != nil {
-//            self.window?.rootViewController = 
-        }
-    }
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

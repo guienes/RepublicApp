@@ -14,6 +14,7 @@ class User {
     var email: String?
     var password: String?
     var phone: String?
+    var pic: String?
 }
 
 //SignUp Request

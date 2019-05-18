@@ -27,7 +27,7 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lON-X3-TOI" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
-                        <rect key="frame" x="8" y="21" width="30" height="30"/>
+                        <rect key="frame" x="16" y="21" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="UQn-4w-8MK"/>
                             <constraint firstAttribute="height" constant="30" id="V6r-hs-auG"/>
@@ -48,8 +48,8 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="J7b-4E-uqa">
-                        <rect key="frame" x="46" y="25" width="42" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="54" y="23.5" width="48" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="0.42352941176470588" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -84,7 +84,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Tbi-yi-MUX" secondAttribute="trailing" constant="16" id="BHt-yn-yR2"/>
                     <constraint firstItem="lON-X3-TOI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="Bwm-IL-teV"/>
-                    <constraint firstItem="lON-X3-TOI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="J0g-LG-l0b"/>
+                    <constraint firstItem="lON-X3-TOI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="J0g-LG-l0b"/>
                     <constraint firstItem="Tbi-yi-MUX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21" id="Nu2-1o-bSC"/>
                     <constraint firstItem="J7b-4E-uqa" firstAttribute="leading" secondItem="lON-X3-TOI" secondAttribute="trailing" constant="8" id="O5H-bY-MI9"/>
                     <constraint firstAttribute="bottom" secondItem="Kb2-Zp-uzS" secondAttribute="bottom" id="Wf9-Lg-9mC"/>

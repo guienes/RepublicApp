@@ -71,7 +71,7 @@
                                                     <color key="textColor" red="0.30588235289999999" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jw3-R1-2Lq" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
+                                                <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jw3-R1-2Lq" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
                                                     <rect key="frame" x="38" y="27" width="50" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kyk-aO-hds">
@@ -81,8 +81,10 @@
                                                     <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="kyk-aO-hds" secondAttribute="bottom" id="3qi-7r-DvU"/>
+                                                        <constraint firstAttribute="height" constant="50" id="430-Hr-mgt"/>
                                                         <constraint firstItem="kyk-aO-hds" firstAttribute="top" secondItem="Jw3-R1-2Lq" secondAttribute="top" id="IFT-Rf-VRP"/>
                                                         <constraint firstAttribute="trailing" secondItem="kyk-aO-hds" secondAttribute="trailing" id="ez7-yR-ZrR"/>
+                                                        <constraint firstAttribute="width" constant="50" id="o3T-qe-X5H"/>
                                                         <constraint firstItem="kyk-aO-hds" firstAttribute="leading" secondItem="Jw3-R1-2Lq" secondAttribute="leading" id="pZY-yC-YdB"/>
                                                         <constraint firstAttribute="width" secondItem="kyk-aO-hds" secondAttribute="width" id="ueH-nc-0ax"/>
                                                         <constraint firstAttribute="height" secondItem="kyk-aO-hds" secondAttribute="height" id="unJ-VL-Xch"/>

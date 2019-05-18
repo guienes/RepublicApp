@@ -40,7 +40,7 @@ class JoinRepublicViewController: UIViewController {
         group.enter()
         let(valid,message) = model.validateFields(republicID: republicIDTextField.text, republicPassword: republicPasswordTextField.text)
         if valid {
-            joinRepublic(idRepublic: republicIDTextField.text!, idUser: UserDefaults.standard.string(forKey: USER_ID) ?? "", password: republicIDTextField.text!) { (result, error) in
+            joinRepublic(idRepublic: republicIDTextField.text!, idUser: UserDefaults.standard.string(forKey: USER_ID) ?? "", password: republicPasswordTextField.text!) { (result, error) in
                 if !called {
                     if let re = result {
                         response = re

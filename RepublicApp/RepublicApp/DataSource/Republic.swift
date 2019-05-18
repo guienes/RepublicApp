@@ -53,8 +53,12 @@ func createRepublic(name: String, password: String, picture: String, members: St
             if let file = data {
                 let json = try JSONSerialization.jsonObject(with: file, options: []) as! [String:Any]
                 //TODO:- Salvar o id da republica
-                
-                completion(json, nil)
+                for (key, value) in json {
+                    if key == "result" {
+                        UserDefaults.standard.set(value, forKey: REPUBLIC_ID)
+                        completion(json, nil)
+                    }
+                }
                 
             } else {
                 completion(nil, nil)

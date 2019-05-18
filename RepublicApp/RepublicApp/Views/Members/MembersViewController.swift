@@ -12,9 +12,8 @@ import UIKit
 class MembersViewController: UIViewController {
 
     @IBOutlet weak var RepublicNameLabel: UILabel!
-    @IBOutlet weak var RepublicNumberUILabel: UILabel!
-    @IBOutlet weak var RepublicStreetUILabel: UILabel!
     @IBOutlet weak var RepublicUITableView: UITableView!
+    @IBOutlet weak var RepublicNumberUILabel: UILabel!
     
     var model = MembersViewModel()
     
@@ -23,6 +22,8 @@ class MembersViewController: UIViewController {
         RepublicUITableView.delegate = self
         RepublicUITableView.dataSource = self
 //        self.get()
+        self.RepublicNameLabel.text = "Academy"
+        self.model.mock()
     }
     
     func get() {
@@ -43,6 +44,10 @@ class MembersViewController: UIViewController {
         group.notify(queue: .main) {
             //            let check = response["result"] as? String
             if !response.isEmpty {
+                self.RepublicNameLabel.text = UserDefaults.standard.string(forKey: REPUBLIC_NAME)
+                self.RepublicNumberUILabel.text = UserDefaults.standard.string(forKey: REPUBLIC_ID)
+                let user = User()
+                
                 self.RepublicUITableView.reloadData()
             } else {
                 //error

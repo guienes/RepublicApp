@@ -30,6 +30,15 @@ func getProducts(idRepublic: String, completion: @escaping (Bool?, Error?, [Prod
             let json = try JSONSerialization.jsonObject(with: data, options: [])
             if let object = json as? [String: Any] {
                 
+                for (key, value) in object {
+                    if key == "result" {
+                        for (key, value) in value as? [String: Any] ?? ["":""]{
+                            if key == "name" {
+                                print(value)
+                            }
+                        }
+                    }
+                }
                 print(object)
                 
             } else if let object = json as? [Any] {
@@ -44,8 +53,8 @@ func getProducts(idRepublic: String, completion: @escaping (Bool?, Error?, [Prod
                         let isComum = anItem["isComum"] as! Bool
                         let isRecorrente = anItem["isRecorrent"] as! Bool
                         let isListBuy = anItem["isListBuy"] as! Bool
-                        let designation = anItem["designation"] as! String
-                        let republic = anItem["republic"] as! String
+                        let designation = anItem["designation"] as? String ?? ""
+//                        let republic = anItem["republic"] as! String
 
                         let product = Product()
                         product.quantity = quantity
@@ -55,7 +64,7 @@ func getProducts(idRepublic: String, completion: @escaping (Bool?, Error?, [Prod
                         product.isRecorrente = isRecorrente
                         product.isListBuy = isListBuy
                         product.designation = designation
-                        product.republic = republic
+//                        product.republic = republic
 
                         //                        let dish = Dish(name, price, id, 0, image, comment, type, ingredients)
                         //                        (dishName, dishPrice, dishID, 0)
@@ -198,7 +207,7 @@ func postProduct(product: Product, completion: @escaping ([String: Any]?, Error?
                         if(value as? Int == 0){
                             completion(nil, error)
                         } else {
-                            completion(nil, error)
+                            completion(json, error)
                         }
                     } else {
                         completion(json, nil)

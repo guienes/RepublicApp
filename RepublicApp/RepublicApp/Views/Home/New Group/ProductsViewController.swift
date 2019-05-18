@@ -41,7 +41,8 @@ class ProductsViewController: UIViewController {
         self.setShadow()
         self.setupTableView()
         self.setupSegmetTap()
-//        self.products()
+        self.products()
+//        self.model.setupMock()
         registerTableView()
         self.navigationController?.navigationBar.isHidden = true
     }
@@ -49,7 +50,18 @@ class ProductsViewController: UIViewController {
     func setupTableView() {
         self.comprasPessoalTableView.delegate = self
         self.comprasPessoalTableView.dataSource = self
+        self.despensaComumTableView.delegate = self
+        self.despensaComumTableView.dataSource = self
+        self.despensaPessoalTableView.delegate = self
+        self.despensaPessoalTableView.dataSource = self
+        self.comprasComumTableView.delegate = self
+        self.comprasComumTableView.dataSource = self
+        
         comprasPessoalTableView.register(UINib(nibName: productCell, bundle: nil), forCellReuseIdentifier: productCell)
+        despensaComumTableView.register(UINib(nibName: productCell, bundle: nil), forCellReuseIdentifier: productCell)
+        despensaPessoalTableView.register(UINib(nibName: productCell, bundle: nil), forCellReuseIdentifier: productCell)
+        comprasComumTableView.register(UINib(nibName: productCell, bundle: nil), forCellReuseIdentifier: productCell)
+
 
     }
     
@@ -223,6 +235,42 @@ class ProductsViewController: UIViewController {
         self.qtdLabel.text = String(model.addQtd())
     }
     @IBAction func createButtonTap(_ sender: Any) {
+        if let itemName = itemTextField.text {
+            self.model.requestNewProduct.isComum = self.model.addIsComum
+            self.model.requestNewProduct.isListBuy = self.model.addIsList
+            self.model.requestNewProduct.republic = UserDefaults.standard.string(forKey: REPUBLIC_ID)
+            self.model.requestNewProduct.designation = UserDefaults.standard.string(forKey: USER_ID)
+            self.model.requestNewProduct.quantity = self.model.quantity
+            self.model.requestNewProduct.isRecorrente = self.model.isConstant
+            self.model.requestNewProduct.name = itemName
+
+            var response: [String : Any]?
+            let group = DispatchGroup() // initialize the async
+            var called = false
+            group.enter()
+            postProduct(product: self.model.requestNewProduct) { (result, error) in
+                if !called {
+                    if let re = result {
+                        response = re
+                        called = true
+                        group.leave()
+                    }
+                }
+            }
+            group.notify(queue: .main) {
+                //            let check = response["result"] as? String
+                if let response = response {
+                    self.sendAllUp()
+                    self.selectedTag = -1
+                    UIView.animate(withDuration: 0.6) {
+                        self.view.layoutIfNeeded()
+                    }
+                } else {
+                    //error
+                }
+            }
+        }
+        self.moveAllUpForAdd()
 //        if let itemName = itemTextField.text {
 //            self.model.requestNewProduct.isComum = self.model.addIsComum
 //            self.model.requestNewProduct.isListBuy = self.model.addIsList
@@ -231,35 +279,14 @@ class ProductsViewController: UIViewController {
 //            self.model.requestNewProduct.quantity = self.model.quantity
 //            self.model.requestNewProduct.isRecorrente = self.model.isConstant
 //            self.model.requestNewProduct.name = itemName
-//
-//            var response: [String : Any]?
-//            let group = DispatchGroup() // initialize the async
-//            var called = false
-//            group.enter()
-//            postProduct(product: self.model.requestNewProduct) { (result, error) in
-//                if !called {
-//                    if let re = result {
-//                        response = re
-//                        called = true
-//                        group.leave()
-//                    }
-//                }
-//            }
-//            group.notify(queue: .main) {
-//                //            let check = response["result"] as? String
-//                if let response = response {
-//                    self.sendAllUp()
-//                    self.selectedTag = -1
-//                    UIView.animate(withDuration: 0.6) {
-//                        self.view.layoutIfNeeded()
-//                    }
-//                } else {
-//                    //error
-//                }
-//            }
+            self.model.products.append(self.model.requestNewProduct)
+            self.model.filterData()
+            self.despensaPessoalTableView.reloadData()
+            self.despensaComumTableView.reloadData()
+            self.comprasComumTableView.reloadData()
+            self.comprasPessoalTableView.reloadData()
 //        }
-//        self.sendAllUp()
-        self.moveAllUpForAdd()
+//        self.moveAllUpForAdd()
     }
     
 }
@@ -308,6 +335,12 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell4.setup(product: self.model.getCellForRow(index: indexPath.row, tableViewIndex: comprasPessoalTableView.tag))
             return cell4
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+//            delete(id: self.model.getIdForRow(index: indexPath.row))
         }
     }
 }
