@@ -16,13 +16,16 @@ class CreateRepublicViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPassTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var ImageRepublicUIImageVIew: UIImageView!
+    var imagePicker = UIImagePickerController()
+    
     
     let model = CreateRepublic()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         setupAutoScrollWhenKeyboardShowsUp()
-        
         repNameTextField.delegate = self
         repNameTextField.tag = 1 //Increment accordingly
         passwordTextField.delegate = self
@@ -30,6 +33,16 @@ class CreateRepublicViewController: UIViewController {
         confirmPassTextField.delegate = self
         confirmPassTextField.tag = 3
     }
+    
+    @IBAction func PhotoButton(_ sender: Any) {
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = true
+        present(imagePicker, animated: true, completion:  nil)
+        
+    }
+    
+    
+    
     
     // MARK:- Scroll View Content Inset
     override func setScrollViewContentInset(_ inset: UIEdgeInsets) {
@@ -91,5 +104,20 @@ extension CreateRepublicViewController: UITextFieldDelegate{
             confirmPassTextField.resignFirstResponder()
         }
         return false
+    }
+}
+
+extension CreateRepublicViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var selectedImage: UIImage?
+        if let editedImage = info[.editedImage] as? UIImage {
+            selectedImage = editedImage
+            self.ImageRepublicUIImageVIew.image = selectedImage!
+            picker.dismiss(animated: true, completion: nil)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            selectedImage = originalImage
+            self.ImageRepublicUIImageVIew.image = selectedImage!
+            picker.dismiss(animated: true, completion: nil)
+        }
     }
 }

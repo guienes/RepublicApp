@@ -136,12 +136,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RepublicApp/Views/Main/JoinRepublic/JoinRepublicViewController.swift"
-            timestampString = "579331921.92998"
+            timestampString = "580063829.695496"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "textFieldShouldReturn(_:)"
+            landmarkName = "join()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

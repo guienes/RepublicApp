@@ -17,14 +17,26 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var confirmPass: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var AccountImageUIImageView: UIImageView!
+    var imagePicker = UIImagePickerController()
+    
     
     let model = AccoountCreationModel()
     var called = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePicker.delegate = self
         setupAutoScrollWhenKeyboardShowsUp()
     }
+    
+    @IBAction func ChangedImageButton(_ sender: Any) {
+        
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
     
     // MARK:- Scroll View Content Inset
     override func setScrollViewContentInset(_ inset: UIEdgeInsets) {
@@ -91,5 +103,21 @@ extension CreateAccountViewController: UITextFieldDelegate{
             confirmPass.resignFirstResponder()
         }
         return false
+    }
+}
+
+extension CreateAccountViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var selectedImage: UIImage?
+        if let editedImage = info[.editedImage] as? UIImage {
+            selectedImage = editedImage
+            self.AccountImageUIImageView.image = selectedImage!
+            picker.dismiss(animated: true, completion: nil)
+        } else if let originalImage = info[.originalImage] as? UIImage {
+            selectedImage = originalImage
+            self.AccountImageUIImageView.image = selectedImage!
+            picker.dismiss(animated: true, completion: nil)
+        }
+            
     }
 }
