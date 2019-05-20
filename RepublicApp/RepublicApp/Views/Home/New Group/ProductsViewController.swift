@@ -45,6 +45,8 @@ class ProductsViewController: UIViewController {
 //        self.model.setupMock()
         registerTableView()
         self.navigationController?.navigationBar.isHidden = true
+        self.itemTextField.attributedPlaceholder = NSAttributedString(string: "Item",
+                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
     }
     
     func setupTableView() {
