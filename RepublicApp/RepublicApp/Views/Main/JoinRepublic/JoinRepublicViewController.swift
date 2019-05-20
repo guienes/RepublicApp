@@ -57,6 +57,7 @@ class JoinRepublicViewController: UIViewController {
         group.notify(queue: .main) {
             //            let check = response["result"] as? String
             if let response = response {
+                UserDefaults.standard.set(self.republicIDTextField.text, forKey: REPUBLIC_ID)
                 self.performSegue(withIdentifier: "joinRepublicSegue", sender: self)
             } else {
                 //error

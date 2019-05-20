@@ -21,9 +21,9 @@ class MembersViewController: UIViewController {
         super.viewDidLoad()
         RepublicUITableView.delegate = self
         RepublicUITableView.dataSource = self
-//        self.get()
-        self.RepublicNameLabel.text = "Academy"
-        self.model.mock()
+        self.get()
+//        self.RepublicNameLabel.text = "Academy"
+//        self.model.mock()
     }
     
     func get() {
@@ -47,7 +47,7 @@ class MembersViewController: UIViewController {
                 self.RepublicNameLabel.text = UserDefaults.standard.string(forKey: REPUBLIC_NAME)
                 self.RepublicNumberUILabel.text = UserDefaults.standard.string(forKey: REPUBLIC_ID)
                 let user = User()
-                
+                self.model.members = response
                 self.RepublicUITableView.reloadData()
             } else {
                 //error
