@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MembersCollectionViewCell" customModule="RepublicApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="239" height="72"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="239" height="72"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NKw-RM-MND">
+                        <rect key="frame" x="0.0" y="0.0" width="239" height="72"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jP5-ch-PrQ" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
+                                <rect key="frame" x="16" y="16" width="40" height="40"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xTu-lk-7te">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xTu-lk-7te" secondAttribute="bottom" id="FHP-xg-14c"/>
+                                    <constraint firstItem="xTu-lk-7te" firstAttribute="top" secondItem="jP5-ch-PrQ" secondAttribute="top" id="Vil-Bw-L5i"/>
+                                    <constraint firstAttribute="trailing" secondItem="xTu-lk-7te" secondAttribute="trailing" id="chR-pa-43v"/>
+                                    <constraint firstItem="xTu-lk-7te" firstAttribute="leading" secondItem="jP5-ch-PrQ" secondAttribute="leading" id="s0p-lk-7Zf"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Nome do Sujeito" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4t-PM-XOA">
+                                <rect key="frame" x="73" y="18" width="127" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTV-PF-3w4" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
+                                <rect key="frame" x="8" y="8" width="223" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XTV-PF-3w4" firstAttribute="leading" secondItem="NKw-RM-MND" secondAttribute="leading" constant="8" id="1Bt-aR-Fei"/>
+                            <constraint firstItem="jP5-ch-PrQ" firstAttribute="leading" secondItem="NKw-RM-MND" secondAttribute="leading" constant="16" id="5ME-b7-BOa"/>
+                            <constraint firstItem="XTV-PF-3w4" firstAttribute="top" secondItem="NKw-RM-MND" secondAttribute="top" constant="8" id="afE-IU-kVc"/>
+                            <constraint firstItem="jP5-ch-PrQ" firstAttribute="top" secondItem="NKw-RM-MND" secondAttribute="top" constant="16" id="eOd-uJ-OZ0"/>
+                            <constraint firstAttribute="bottom" secondItem="jP5-ch-PrQ" secondAttribute="bottom" constant="16" id="euG-6b-CiR"/>
+                            <constraint firstAttribute="trailing" secondItem="XTV-PF-3w4" secondAttribute="trailing" constant="8" id="ffP-JS-MLK"/>
+                            <constraint firstAttribute="bottom" secondItem="XTV-PF-3w4" secondAttribute="bottom" constant="8" id="lF0-HN-fWR"/>
+                            <constraint firstAttribute="trailing" secondItem="jP5-ch-PrQ" secondAttribute="trailing" constant="183" id="tuK-D6-SkM"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NKw-RM-MND" secondAttribute="bottom" id="0Kw-hs-xbs"/>
+                <constraint firstAttribute="trailing" secondItem="NKw-RM-MND" secondAttribute="trailing" id="Ahc-G4-7Um"/>
+                <constraint firstItem="NKw-RM-MND" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KaY-NA-zu2"/>
+                <constraint firstItem="NKw-RM-MND" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="NeT-bg-yhK"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="239" height="72"/>
+            <connections>
+                <outlet property="Celula" destination="NKw-RM-MND" id="Jmt-XH-LwR"/>
+                <outlet property="Foto" destination="jP5-ch-PrQ" id="re5-q6-m1T"/>
+                <outlet property="Nome" destination="F4t-PM-XOA" id="yht-kG-AX9"/>
+                <outlet property="Transparencia" destination="XTV-PF-3w4" id="Lo4-l1-gwZ"/>
+            </connections>
+            <point key="canvasLocation" x="274.63768115942031" y="147.99107142857142"/>
+        </collectionViewCell>
+    </objects>
+</document>
