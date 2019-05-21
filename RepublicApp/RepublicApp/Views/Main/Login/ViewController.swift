@@ -21,8 +21,13 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.setupNavigationController()
-
+        navigationController?.navigationBar.barStyle = .black
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

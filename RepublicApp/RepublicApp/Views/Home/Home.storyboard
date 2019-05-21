@@ -423,14 +423,14 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPb-xt-neQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compras Pessoal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPk-8q-KXU">
-                                                <rect key="frame" x="16" y="20" width="187" height="27.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compras Pessoais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPk-8q-KXU">
+                                                <rect key="frame" x="16" y="20" width="199.5" height="27.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                 <color key="textColor" red="0.45490196078431372" green="0.35686274509803922" blue="0.55294117647058827" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(vazio)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cq-PN-nd5">
-                                                <rect key="frame" x="211" y="24" width="52" height="20.5"/>
+                                                <rect key="frame" x="223.5" y="24" width="52" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.81568627449999997" green="0.81568627449999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -527,6 +527,10 @@
                         <outlet property="noLabel" destination="qZE-Ox-3WZ" id="v1H-ds-F8a"/>
                         <outlet property="noView" destination="Sj9-d9-OCb" id="G8j-tX-NNk"/>
                         <outlet property="qtdLabel" destination="Y5C-t0-c2l" id="2xh-Lc-mhg"/>
+                        <outlet property="vazioComprasComumLabel" destination="JFv-4R-nEr" id="iY2-LU-zWN"/>
+                        <outlet property="vazioComprasPessoaisLabel" destination="2cq-PN-nd5" id="2HF-4l-uMr"/>
+                        <outlet property="vazioDespensaComumLabel" destination="f3u-Oo-mvn" id="IAC-1c-bcE"/>
+                        <outlet property="vazioDespensaPessoalLabel" destination="izG-v9-mxw" id="arx-YO-F2U"/>
                         <outlet property="yesLabel" destination="yue-vy-zue" id="XQz-Sy-jjo"/>
                         <outlet property="yesView" destination="XwI-pz-i7T" id="daU-3M-hWU"/>
                         <outletCollection property="views" destination="RaO-bc-3bE" collectionClass="NSMutableArray" id="07u-fF-MBJ"/>

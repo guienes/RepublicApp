@@ -27,6 +27,11 @@ class ProductsViewController: UIViewController {
     @IBOutlet weak var comprasComumTableView: UITableView!
     @IBOutlet weak var comprasPessoalTableView: UITableView!
     
+    @IBOutlet weak var vazioDespensaComumLabel: UILabel!
+    @IBOutlet weak var vazioDespensaPessoalLabel: UILabel!
+    @IBOutlet weak var vazioComprasComumLabel: UILabel!
+    @IBOutlet weak var vazioComprasPessoaisLabel: UILabel!
+    
    
     let productCell = "ProductTableViewCell"
     let model = ProductsViewModel()
@@ -42,11 +47,36 @@ class ProductsViewController: UIViewController {
         self.setupTableView()
         self.setupSegmetTap()
         self.products()
+        checkEmptyTable()
 //        self.model.setupMock()
         registerTableView()
         self.navigationController?.navigationBar.isHidden = true
         self.itemTextField.attributedPlaceholder = NSAttributedString(string: "Item",
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+    }
+    
+    func checkEmptyTable() {
+        if despensaComumTableView.numberOfRows(inSection: 0) == 0 {
+            vazioDespensaComumLabel.isHidden = false
+        } else {
+            vazioDespensaComumLabel.isHidden = true
+        }
+        if despensaPessoalTableView.numberOfRows(inSection: 0) == 0 {
+            vazioDespensaPessoalLabel.isHidden = false
+        } else {
+            vazioDespensaPessoalLabel.isHidden = true
+        }
+        if comprasComumTableView.numberOfRows(inSection: 0) == 0 {
+            vazioComprasComumLabel.isHidden = false
+        } else {
+            vazioComprasComumLabel.isHidden = true
+        }
+        if comprasPessoalTableView.numberOfRows(inSection: 0) == 0 {
+            vazioComprasPessoaisLabel.isHidden = false
+        } else {
+            vazioComprasPessoaisLabel.isHidden = true
+        }
+
     }
     
     func setupTableView() {
@@ -186,6 +216,7 @@ class ProductsViewController: UIViewController {
             self.despensaComumTableView.reloadData()
             self.comprasComumTableView.reloadData()
             self.comprasPessoalTableView.reloadData()
+            self.checkEmptyTable()
         }
     }
     
@@ -267,6 +298,8 @@ class ProductsViewController: UIViewController {
                     UIView.animate(withDuration: 0.6) {
                         self.view.layoutIfNeeded()
                     }
+                    self.checkEmptyTable()
+
                 } else {
                     //error
                 }
