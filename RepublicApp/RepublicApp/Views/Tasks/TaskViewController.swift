@@ -40,7 +40,7 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
         TasksTableView.dataSource = self
         viewTaps()
         model.mockNaoDesignado()
-        self.itemTextField.attributedPlaceholder = NSAttributedString(string: "Item",
+        self.itemTextField.attributedPlaceholder = NSAttributedString(string: "Tarefa",
                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         self.descTextField.attributedPlaceholder = NSAttributedString(string: "Descrição",
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])

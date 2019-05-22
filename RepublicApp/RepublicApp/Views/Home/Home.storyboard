@@ -543,7 +543,7 @@
             </objects>
             <point key="canvasLocation" x="805.79710144927537" y="50.892857142857139"/>
         </scene>
-        <!--Item-->
+        <!--Tarefas-->
         <scene sceneID="s6y-jY-IQ7">
             <objects>
                 <viewController id="375-bI-lZc" customClass="TaskViewController" customModule="RepublicApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -563,7 +563,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l3G-If-whE">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="57"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etJ-zT-5em">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tarefa" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etJ-zT-5em">
                                                         <rect key="frame" x="0.0" y="0.0" width="359" height="48"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="359" id="S8i-MS-JSL"/>
@@ -751,7 +751,7 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="OSf-ie-y9H"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIJ-sI-WI8" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIJ-sI-WI8" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="114" width="414" height="739"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minhas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJj-7w-1XX">
@@ -844,7 +844,7 @@
                                         </prototypes>
                                     </tableView>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BAE-S9-1uk">
-                                        <rect key="frame" x="22" y="72" width="370" height="136"/>
+                                        <rect key="frame" x="22" y="72" width="392" height="136"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="136" id="kmC-3L-fQf"/>
@@ -987,7 +987,7 @@
                                     <constraint firstAttribute="trailing" secondItem="EGu-lK-FxJ" secondAttribute="trailing" constant="22" id="N4S-9F-RIu"/>
                                     <constraint firstItem="EGu-lK-FxJ" firstAttribute="top" secondItem="Krr-AW-Xja" secondAttribute="bottom" constant="38" id="PF0-s7-n52"/>
                                     <constraint firstItem="Krr-AW-Xja" firstAttribute="centerX" secondItem="nIJ-sI-WI8" secondAttribute="centerX" id="Pg9-o2-k6Z"/>
-                                    <constraint firstItem="BAE-S9-1uk" firstAttribute="centerX" secondItem="nIJ-sI-WI8" secondAttribute="centerX" id="Y8x-Rl-9Yg"/>
+                                    <constraint firstItem="BAE-S9-1uk" firstAttribute="centerX" secondItem="nIJ-sI-WI8" secondAttribute="centerX" constant="11" id="Y8x-Rl-9Yg"/>
                                     <constraint firstItem="EGu-lK-FxJ" firstAttribute="leading" secondItem="nIJ-sI-WI8" secondAttribute="leading" constant="28" id="bNp-M3-kfA"/>
                                     <constraint firstItem="BAE-S9-1uk" firstAttribute="top" secondItem="aJj-7w-1XX" secondAttribute="bottom" constant="8" id="pd2-9t-rgB"/>
                                     <constraint firstItem="KA7-8q-hMq" firstAttribute="top" secondItem="BAE-S9-1uk" secondAttribute="bottom" constant="36" id="rwx-VZ-02I"/>
@@ -1031,7 +1031,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9M3-QK-Xul"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="TaskTabBarBlack" selectedImage="TasksImagePurple" id="Gol-I1-dg2"/>
+                    <tabBarItem key="tabBarItem" title="Tarefas" image="TaskTabBarBlack" selectedImage="TasksImagePurple" id="Gol-I1-dg2"/>
                     <connections>
                         <outlet property="TasksTableView" destination="EGu-lK-FxJ" id="bko-Nr-tdv"/>
                         <outlet property="addButtonOutlet" destination="71G-xL-Pma" id="Kur-Hn-HIB"/>
@@ -1053,7 +1053,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W4m-IB-3Eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1587" y="240"/>
+            <point key="canvasLocation" x="1586.9565217391305" y="239.73214285714283"/>
         </scene>
         <!--Membros-->
         <scene sceneID="Tne-3b-c63">
