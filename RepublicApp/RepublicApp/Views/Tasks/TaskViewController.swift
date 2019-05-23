@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TaskViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class TaskViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var botConstraint: NSLayoutConstraint!
@@ -29,26 +29,52 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var yesLabel: UILabel!
     @IBOutlet weak var noView: UIView!
     @IBOutlet weak var noLabel: UILabel!
+    @IBOutlet weak var membersCollectionView: UICollectionView!
     
     let model = TaskViewModel()
+    let memberCellName = "MembersCollectionViewCell"
+    let dismissTap = UITapGestureRecognizer(target: self, action: #selector(dismissTextField))
+
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        membersCollectionView.delegate = self
+        membersCollectionView.dataSource = self
         TasksTableView.delegate = self
         TasksTableView.dataSource = self
+//        itemTextField.delegate = self
+//        descTextField.delegate = self
         viewTaps()
-        model.mockNaoDesignado()
+//        model.mockNaoDesignado()
         self.itemTextField.attributedPlaceholder = NSAttributedString(string: "Item",
                                                                      attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         self.descTextField.attributedPlaceholder = NSAttributedString(string: "Descrição",
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 //        model.mockData()
+        registerNib()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         get()
+        membersGet()
+    }
+    
+    func registerNib(){
+        membersCollectionView.register(UINib(nibName: memberCellName, bundle: nil), forCellWithReuseIdentifier: memberCellName)
     }
     
     func get() {
+        self.model.tasks.removeAll()
+        self.model.recorrenteTask.removeAll()
+        self.model.ocasionalTask.removeAll()
+        self.model.myTasks.removeAll()
         let group = DispatchGroup() // initialize the async
         var called = false
         group.enter()
@@ -66,6 +92,32 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.model.separateTasks()
             self.TasksTableView.reloadData()
             self.collectionView.reloadData()
+        }
+    }
+    
+    func membersGet() {
+        var response = [User]()
+        let group = DispatchGroup() // initialize the async
+        var called = false
+        group.enter()
+        getMembers(republicId: UserDefaults.standard.string(forKey: REPUBLIC_ID) ?? "") { (result, error, users) in
+            if !called {
+                if let re = users {
+                    response = re
+                    called = true
+                    group.leave()
+                    
+                }
+            }
+        }
+        group.notify(queue: .main) {
+            //            let check = response["result"] as? String
+            if !response.isEmpty {
+                self.model.members = response
+                self.membersCollectionView.reloadData()
+            } else {
+                //error
+            }
         }
     }
     
@@ -102,10 +154,6 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let tapYes = UITapGestureRecognizer(target: self, action: #selector(didTapYes))
         let tapNo = UITapGestureRecognizer(target: self, action: #selector(didTapNo))
-        
-        let dismissTap = UITapGestureRecognizer(target: self, action: #selector(dismissTextField))
-        self.view.addGestureRecognizer(dismissTap)
-
         
         self.yesView.addGestureRecognizer(tapYes)
         self.noView.addGestureRecognizer(tapNo)
@@ -150,14 +198,38 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
         model.isYes = false
     }
     
+    //MARK:- CollectionView
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == membersCollectionView {
+            return model.getNumberOfMembers()
+        }
         return model.getNumberOfRows(tableIndex: 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if collectionView == membersCollectionView {
+            let memberCell = membersCollectionView.dequeueReusableCell(withReuseIdentifier: memberCellName, for: indexPath) as! MembersCollectionViewCell
+            memberCell.setup(member: self.model.getMemberForRow(index: indexPath.row), selectedId: self.model.selectedMemberId)
+            return memberCell
+        }
         let aCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaskModel", for: indexPath) as! CellTasksViewController
         aCell.setup(task: model.getTaskForIndex(tableIndex: 1, index: indexPath.row))
         return aCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == membersCollectionView {
+            return CGSize(width: self.collectionView.cellForItem(at: indexPath)?.frame.width ?? 150, height: 72)
+        }
+        return CGSize(width: 203, height: 129)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == membersCollectionView {
+            self.model.selectedMemberId = self.model.getMemberForRow(index: indexPath.row).id ?? ""
+            self.membersCollectionView.reloadData()
+        }
         
     }
     
@@ -189,11 +261,12 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBAction func createTask(_ sender: Any) {
         if let itemName = itemTextField.text, let desc = descTextField.text {
             self.model.requestNewTask.republic = UserDefaults.standard.string(forKey: REPUBLIC_ID)
-            self.model.requestNewTask.designation = UserDefaults.standard.string(forKey: USER_ID)
             self.model.requestNewTask.desc = desc
             self.model.requestNewTask.isRecorrent = self.model.isRecorrente
             self.model.requestNewTask.name = itemName
-            
+            if self.model.selectedMemberId != ""{
+                self.model.requestNewTask.designation = self.model.selectedMemberId
+            }
             var response: [String : Any]?
             let group = DispatchGroup() // initialize the async
             var called = false
@@ -249,3 +322,18 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate{
     
 }
 
+//extension TaskViewController: UITextFieldDelegate {
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        self.view.removeGestureRecognizer(dismissTap)
+//    }
+//
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        self.view.addGestureRecognizer(dismissTap)
+//
+//    }
+//
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        textField.resignFirstResponder()
+//        return true
+//    }
+//}

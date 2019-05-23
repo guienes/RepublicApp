@@ -58,6 +58,10 @@ class ProductsViewModel {
     
     
     func filterData(){
+        despensaComumProducts.removeAll()
+        despensaMinhaProducts.removeAll()
+        listaComumProducts.removeAll()
+        listaMinhaProducts.removeAll()
             for product in products {
                 if let isComum = product.isComum, let isList = product.isListBuy {
                     if isComum {

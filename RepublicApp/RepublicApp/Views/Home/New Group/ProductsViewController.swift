@@ -46,13 +46,17 @@ class ProductsViewController: UIViewController {
         self.setShadow()
         self.setupTableView()
         self.setupSegmetTap()
-        self.products()
         checkEmptyTable()
 //        self.model.setupMock()
         registerTableView()
         self.navigationController?.navigationBar.isHidden = true
         self.itemTextField.attributedPlaceholder = NSAttributedString(string: "Item",
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.products()
     }
     
     func checkEmptyTable() {
@@ -197,6 +201,13 @@ class ProductsViewController: UIViewController {
     
     //MARK:-Get Products
     func products() {
+        self.showSpinner(onView: self.view)
+        self.model.products.removeAll()
+        self.model.despensaComumProducts.removeAll()
+        self.model.despensaMinhaProducts.removeAll()
+        self.model.listaComumProducts.removeAll()
+        self.model.listaMinhaProducts.removeAll()
+        
         let group = DispatchGroup() // initialize the async
         var called = false
         group.enter()
@@ -217,6 +228,7 @@ class ProductsViewController: UIViewController {
             self.comprasComumTableView.reloadData()
             self.comprasPessoalTableView.reloadData()
             self.checkEmptyTable()
+            self.removeSpinner()
         }
     }
     
@@ -298,6 +310,7 @@ class ProductsViewController: UIViewController {
                     UIView.animate(withDuration: 0.6) {
                         self.view.layoutIfNeeded()
                     }
+                    self.products()
                     self.checkEmptyTable()
 
                 } else {
@@ -314,12 +327,13 @@ class ProductsViewController: UIViewController {
 //            self.model.requestNewProduct.quantity = self.model.quantity
 //            self.model.requestNewProduct.isRecorrente = self.model.isConstant
 //            self.model.requestNewProduct.name = itemName
-            self.model.products.append(self.model.requestNewProduct)
-            self.model.filterData()
-            self.despensaPessoalTableView.reloadData()
-            self.despensaComumTableView.reloadData()
-            self.comprasComumTableView.reloadData()
-            self.comprasPessoalTableView.reloadData()
+//            self.model.products.append(self.model.requestNewProduct)
+//            self.model.filterData()
+//            self.despensaPessoalTableView.reloadData()
+//            self.despensaComumTableView.reloadData()
+//            self.comprasComumTableView.reloadData()
+//            self.comprasPessoalTableView.reloadData()
+        
 //        }
 //        self.moveAllUpForAdd()
     }
@@ -397,15 +411,7 @@ extension ProductsViewController: ProductTableViewCellDelegate {
         }
         group.notify(queue: .main) {
             //            let check = response["result"] as? String
-            if let response = response {
-                self.despensaPessoalTableView.reloadData()
-                self.despensaComumTableView.reloadData()
-                self.comprasComumTableView.reloadData()
-                self.comprasPessoalTableView.reloadData()
-                //alguma coisa quando deletar
-            } else {
-                //error
-            }
+            self.products()
         }
     }
     

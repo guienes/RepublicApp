@@ -21,9 +21,13 @@ class MembersViewController: UIViewController {
         super.viewDidLoad()
         RepublicUITableView.delegate = self
         RepublicUITableView.dataSource = self
-        self.get()
 //        self.RepublicNameLabel.text = "Academy"
 //        self.model.mock()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.get()
     }
     
     func get() {
