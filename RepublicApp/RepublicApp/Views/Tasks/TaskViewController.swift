@@ -125,6 +125,7 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
         var response: [String : Any]?
         let group = DispatchGroup() // initialize the async
         var called = false
+        group.enter()
         deleteTask(idProduct: id) { (result, error) in
             if !called {
                 if let re = result {
@@ -137,12 +138,7 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
         group.notify(queue: .main) {
             //            let check = response["result"] as? String
-            if let response = response {
-                self.TasksTableView.reloadData()
-                //alguma coisa quando deletar
-            } else {
-                //error
-            }
+            self.get()
         }
     }
     
@@ -214,6 +210,7 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
             return memberCell
         }
         let aCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TaskModel", for: indexPath) as! CellTasksViewController
+        aCell.delegate = self
         aCell.setup(task: model.getTaskForIndex(tableIndex: 1, index: indexPath.row))
         return aCell
     }
@@ -284,8 +281,7 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 //            let check = response["result"] as? String
                 if let response = response {
                     self.sendUp()
-                    self.model.tasks.append( self.model.requestNewTask)
-                    self.model.separateTasks()
+                    self.get()
                     self.TasksTableView.reloadData()
                     self.collectionView.reloadData()
                 } else {
@@ -322,18 +318,10 @@ extension TaskViewController: UITableViewDataSource, UITableViewDelegate{
     
 }
 
-//extension TaskViewController: UITextFieldDelegate {
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        self.view.removeGestureRecognizer(dismissTap)
-//    }
-//
-//    func textFieldDidBeginEditing(_ textField: UITextField) {
-//        self.view.addGestureRecognizer(dismissTap)
-//
-//    }
-//
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        return true
-//    }
-//}
+extension TaskViewController: CellTasksViewControllerDelegate {
+    func didDelete(id: String) {
+        delete(id: id)
+    }
+    
+    
+}

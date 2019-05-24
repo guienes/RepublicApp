@@ -876,6 +876,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHy-jG-b5T">
                                                             <rect key="frame" x="157" y="76" width="38" height="38"/>
                                                             <state key="normal" image="Oval-1"/>
+                                                            <connections>
+                                                                <action selector="didTapCheck:" destination="ZrT-Kv-31I" eventType="touchUpInside" id="Y8P-cI-zPZ"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" image="Group 4" translatesAutoresizingMaskIntoConstraints="NO" id="tzw-zy-22X">
                                                             <rect key="frame" x="170" y="78" width="14" height="28"/>

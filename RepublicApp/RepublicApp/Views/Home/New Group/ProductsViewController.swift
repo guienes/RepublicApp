@@ -201,7 +201,6 @@ class ProductsViewController: UIViewController {
     
     //MARK:-Get Products
     func products() {
-        self.showSpinner(onView: self.view)
         self.model.products.removeAll()
         self.model.despensaComumProducts.removeAll()
         self.model.despensaMinhaProducts.removeAll()
@@ -228,7 +227,47 @@ class ProductsViewController: UIViewController {
             self.comprasComumTableView.reloadData()
             self.comprasPessoalTableView.reloadData()
             self.checkEmptyTable()
-            self.removeSpinner()
+        }
+    }
+    
+    func create() {
+        if let itemName = itemTextField.text {
+            self.model.requestNewProduct.isComum = self.model.addIsComum
+            self.model.requestNewProduct.isListBuy = self.model.addIsList
+            self.model.requestNewProduct.republic = UserDefaults.standard.string(forKey: REPUBLIC_ID)
+            self.model.requestNewProduct.designation = UserDefaults.standard.string(forKey: USER_ID)
+            self.model.requestNewProduct.quantity = self.model.quantity
+            self.model.requestNewProduct.isRecorrente = self.model.isConstant
+            self.model.requestNewProduct.name = itemName
+            
+            var response: [String : Any]?
+            let group = DispatchGroup() // initialize the async
+            var called = false
+            group.enter()
+            postProduct(product: self.model.requestNewProduct) { (result, error) in
+                if !called {
+                    if let re = result {
+                        response = re
+                        called = true
+                        group.leave()
+                    }
+                }
+            }
+            group.notify(queue: .main) {
+                //            let check = response["result"] as? String
+                if let response = response {
+                    self.sendAllUp()
+                    self.selectedTag = -1
+                    UIView.animate(withDuration: 0.6) {
+                        self.view.layoutIfNeeded()
+                    }
+                    self.products()
+                    self.checkEmptyTable()
+                    
+                } else {
+                    //error
+                }
+            }
         }
     }
     
@@ -280,44 +319,7 @@ class ProductsViewController: UIViewController {
         self.qtdLabel.text = String(model.addQtd())
     }
     @IBAction func createButtonTap(_ sender: Any) {
-        if let itemName = itemTextField.text {
-            self.model.requestNewProduct.isComum = self.model.addIsComum
-            self.model.requestNewProduct.isListBuy = self.model.addIsList
-            self.model.requestNewProduct.republic = UserDefaults.standard.string(forKey: REPUBLIC_ID)
-            self.model.requestNewProduct.designation = UserDefaults.standard.string(forKey: USER_ID)
-            self.model.requestNewProduct.quantity = self.model.quantity
-            self.model.requestNewProduct.isRecorrente = self.model.isConstant
-            self.model.requestNewProduct.name = itemName
-
-            var response: [String : Any]?
-            let group = DispatchGroup() // initialize the async
-            var called = false
-            group.enter()
-            postProduct(product: self.model.requestNewProduct) { (result, error) in
-                if !called {
-                    if let re = result {
-                        response = re
-                        called = true
-                        group.leave()
-                    }
-                }
-            }
-            group.notify(queue: .main) {
-                //            let check = response["result"] as? String
-                if let response = response {
-                    self.sendAllUp()
-                    self.selectedTag = -1
-                    UIView.animate(withDuration: 0.6) {
-                        self.view.layoutIfNeeded()
-                    }
-                    self.products()
-                    self.checkEmptyTable()
-
-                } else {
-                    //error
-                }
-            }
-        }
+        self.create()
         self.moveAllUpForAdd()
 //        if let itemName = itemTextField.text {
 //            self.model.requestNewProduct.isComum = self.model.addIsComum
@@ -396,9 +398,31 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ProductsViewController: ProductTableViewCellDelegate {
     func deleteCell(id: String) {
+//        let product = model.getProductFromId(id: id)
+//        if product.isRecorrente ?? false {
+//            if product.isComum ?? false{
+//                self.model.addIsComum = true
+//            } else {
+//                self.model.addIsComum = false
+//            }
+//            if product.isListBuy ?? false {
+//                self.model.addIsList = true
+//            } else {
+//                self.model.addIsList = false
+//            }
+//            if product.isComum ?? false {
+//                self.model.addIsComum = true
+//            } else {
+//                self.model.addIsComum = false
+//            }
+//            self.model.quantity = product.quantity ?? 0
+//            self.itemTextField.text = product.name
+//            create()
+//        }
         var response: [String : Any]?
         let group = DispatchGroup() // initialize the async
         var called = false
+        group.enter()
         deleteProducts(idProduct: id) { (result, error) in
             if !called {
                 if let re = result {
