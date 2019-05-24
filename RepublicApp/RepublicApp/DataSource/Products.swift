@@ -134,7 +134,7 @@ func deleteProducts(idProduct: String, completion: @escaping ([String: Any]?, Er
                         if(value as? Int == 0){
                             completion(nil, error)
                         } else {
-                            completion(nil, error)
+                            completion(json, error)
                         }
                     } else {
                         completion(json, nil)

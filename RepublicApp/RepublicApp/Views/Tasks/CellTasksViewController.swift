@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+protocol CellTasksViewControllerDelegate {
+    func didDelete(id: String)
+}
+
 class CellTasksViewController: UICollectionViewCell{
     
     @IBOutlet weak var CiruculoDeFogo: UIButton!
@@ -17,6 +21,9 @@ class CellTasksViewController: UICollectionViewCell{
     @IBOutlet weak var TaskDescriptionUILabel: UILabel!
     @IBOutlet weak var TaskTitleUILabel: UILabel!
     
+    var delegate: CellTasksViewControllerDelegate?
+    var id: String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -24,6 +31,14 @@ class CellTasksViewController: UICollectionViewCell{
     func setup(task: Task) {
         TaskTitleUILabel.text = task.name
         TaskDescriptionUILabel.text = task.desc
+        self.id = task.id
+        self.CompleteTaskUIImageView.isHidden = true
+    }
+    
+    
+    @IBAction func didTapCheck(_ sender: Any) {
+        self.CompleteTaskUIImageView.isHidden = false
+        self.delegate?.didDelete(id: self.id ?? "")
     }
     
 }

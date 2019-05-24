@@ -17,8 +17,8 @@ class TaskViewModel {
     var recorrenteTask = [Task]()
     var ocasionalTask = [Task]()
     var requestNewTask = Task()
-    
-    
+    var members = [User]()
+    var selectedMemberId = ""
     var isRecorrente = true
     var isYes = true
     
@@ -74,6 +74,14 @@ class TaskViewModel {
             }
         }
         tasks.removeAll()
+    }
+    
+    func getNumberOfMembers() -> Int {
+        return members.count
+    }
+    
+    func getMemberForRow(index: Int) -> User {
+        return members[index]
     }
     
     func getNumberOfRows(tableIndex: Int) -> Int {

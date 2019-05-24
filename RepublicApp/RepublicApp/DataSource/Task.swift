@@ -81,7 +81,7 @@ func getTasks(idRepublic: String, completion: @escaping (Bool?, Error?, [Task]?)
 }
 
 func deleteTask(idProduct: String, completion: @escaping ([String: Any]?, Error?) -> Void) {
-    let parameters = ["idProduct": idProduct, "idRepublic": UserDefaults.standard.string(forKey: REPUBLIC_ID)]
+    let parameters = ["idTask": idProduct, "idRepublic": UserDefaults.standard.string(forKey: REPUBLIC_ID)]
     //create the url with NSURL
     let url = URL(string: "https://republicanapp.herokuapp.com/api/deleteTask/")!
     
@@ -129,7 +129,7 @@ func deleteTask(idProduct: String, completion: @escaping ([String: Any]?, Error?
                         if(value as? Int == 0){
                             completion(nil, error)
                         } else {
-                            completion(nil, error)
+                            completion(json, error)
                         }
                     } else {
                         completion(json, nil)
