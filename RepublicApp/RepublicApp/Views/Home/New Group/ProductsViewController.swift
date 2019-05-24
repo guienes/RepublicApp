@@ -52,11 +52,8 @@ class ProductsViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         self.itemTextField.attributedPlaceholder = NSAttributedString(string: "Item",
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.products()
+
     }
     
     func checkEmptyTable() {
@@ -262,6 +259,7 @@ class ProductsViewController: UIViewController {
                         self.view.layoutIfNeeded()
                     }
                     self.products()
+                    self.itemTextField.text = nil
                     self.checkEmptyTable()
                     
                 } else {

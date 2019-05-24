@@ -34,7 +34,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jP5-ch-PrQ" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jP5-ch-PrQ" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
                                 <rect key="frame" x="16" y="16" width="40" height="40"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xTu-lk-7te">
@@ -54,7 +54,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do Sujeito" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4t-PM-XOA">
-                                <rect key="frame" x="73" y="26" width="150" height="21"/>
+                                <rect key="frame" x="48" y="26" width="143.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -62,12 +62,11 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="F4t-PM-XOA" firstAttribute="centerX" secondItem="NKw-RM-MND" secondAttribute="centerX" id="8L2-uP-x1w"/>
                             <constraint firstItem="Ffg-79-uOH" firstAttribute="top" secondItem="NKw-RM-MND" secondAttribute="top" constant="8" id="Dtm-ql-sLV"/>
-                            <constraint firstAttribute="trailing" secondItem="F4t-PM-XOA" secondAttribute="trailing" constant="16" id="Fvh-AP-Io1"/>
                             <constraint firstItem="jP5-ch-PrQ" firstAttribute="top" secondItem="NKw-RM-MND" secondAttribute="top" constant="16" id="GYT-ny-uk8"/>
                             <constraint firstItem="Ffg-79-uOH" firstAttribute="leading" secondItem="NKw-RM-MND" secondAttribute="leading" constant="8" id="Lzv-tw-eRT"/>
                             <constraint firstItem="jP5-ch-PrQ" firstAttribute="leading" secondItem="NKw-RM-MND" secondAttribute="leading" constant="16" id="Q42-ES-Xur"/>
-                            <constraint firstItem="F4t-PM-XOA" firstAttribute="leading" secondItem="jP5-ch-PrQ" secondAttribute="trailing" constant="17" id="TMj-hx-Xgd"/>
                             <constraint firstAttribute="bottom" secondItem="jP5-ch-PrQ" secondAttribute="bottom" constant="16" id="Uv5-Pn-ZSI"/>
                             <constraint firstItem="F4t-PM-XOA" firstAttribute="top" secondItem="NKw-RM-MND" secondAttribute="top" constant="26" id="gbF-c5-ZPf"/>
                             <constraint firstAttribute="bottom" secondItem="Ffg-79-uOH" secondAttribute="bottom" constant="8" id="lg0-kB-Gzi"/>

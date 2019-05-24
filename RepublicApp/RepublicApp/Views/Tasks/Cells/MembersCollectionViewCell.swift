@@ -21,7 +21,7 @@ class MembersCollectionViewCell: UICollectionViewCell {
     
     func setup(member: User, selectedId: String) {
         if selectedId == member.id {
-            Transparencia.backgroundColor = .red
+            Transparencia.backgroundColor = .lightGray
         } else {
             Transparencia.backgroundColor = .white
         }

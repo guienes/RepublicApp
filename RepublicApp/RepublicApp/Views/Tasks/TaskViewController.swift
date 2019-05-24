@@ -21,8 +21,6 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var recorrenteView: UIView!
     @IBOutlet weak var ocasionalView: UIView!
     @IBOutlet weak var addButtonOutlet: UIButton!
-    
-    
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var descTextField: UITextField!
     @IBOutlet weak var yesView: UIView!
@@ -57,10 +55,6 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                                                       attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
 //        model.mockData()
         registerNib()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         get()
         membersGet()
     }
@@ -223,7 +217,11 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == membersCollectionView {
-            self.model.selectedMemberId = self.model.getMemberForRow(index: indexPath.row).id ?? ""
+            if self.model.selectedMemberId == self.model.getMemberForRow(index: indexPath.row).id ?? "" {
+                self.model.selectedMemberId = ""
+            } else {
+                self.model.selectedMemberId = self.model.getMemberForRow(index: indexPath.row).id ?? ""
+            }
             self.membersCollectionView.reloadData()
         }
         
@@ -281,6 +279,8 @@ class TaskViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 if let response = response {
                     self.sendUp()
                     self.get()
+                    self.itemTextField.text = nil
+                    self.descTextField.text = nil
                     self.TasksTableView.reloadData()
                     self.collectionView.reloadData()
                 } else {

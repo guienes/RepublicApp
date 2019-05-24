@@ -344,7 +344,7 @@
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="Q8x-0x-VwH">
-                                                <rect key="frame" x="335.5" y="763" width="23" height="32"/>
+                                                <rect key="frame" x="339" y="771" width="16" height="16"/>
                                             </imageView>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete os campos acima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usl-x8-uHI">
                                                 <rect key="frame" x="32" y="700" width="156" height="14.5"/>
@@ -352,7 +352,7 @@
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tw4-EA-b2N" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
+                                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tw4-EA-b2N" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
                                                 <rect key="frame" x="275" y="168" width="110" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IconeAdicionarFoto" translatesAutoresizingMaskIntoConstraints="NO" id="cvL-UU-v3m">
@@ -629,15 +629,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CriarRepública" translatesAutoresizingMaskIntoConstraints="NO" id="wly-Vn-PP3">
-                                                <rect key="frame" x="32" y="174" width="169" height="78"/>
+                                                <rect key="frame" x="32" y="236" width="169" height="16"/>
                                             </imageView>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ok-bh-XzL" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
+                                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ok-bh-XzL" customClass="ProductView" customModule="RepublicApp" customModuleProvider="target">
                                                 <rect key="frame" x="266" y="163" width="110" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlaceholderRepublica" translatesAutoresizingMaskIntoConstraints="NO" id="f9F-EW-RQ4">
                                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                                     </imageView>
-                                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9r-Qq-WtW">
+                                                    <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9r-Qq-WtW">
                                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                                         <connections>
                                                             <action selector="PhotoButton:" destination="txL-q9-NRe" eventType="touchUpInside" id="zOE-KI-o0Q"/>
@@ -855,7 +855,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Juntar-se" translatesAutoresizingMaskIntoConstraints="NO" id="TcG-jY-1O8">
-                                                <rect key="frame" x="30" y="206" width="158" height="27"/>
+                                                <rect key="frame" x="30" y="206" width="16" height="16"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -929,7 +929,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dTd-cU-gP2"/>
-        <segue reference="Htf-Tm-qF4"/>
+        <segue reference="fgv-wL-rG8"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

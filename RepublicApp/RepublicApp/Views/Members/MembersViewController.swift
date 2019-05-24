@@ -23,12 +23,9 @@ class MembersViewController: UIViewController {
         RepublicUITableView.dataSource = self
 //        self.RepublicNameLabel.text = "Academy"
 //        self.model.mock()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         self.get()
     }
+    
     
     func get() {
         var response = [User]()
