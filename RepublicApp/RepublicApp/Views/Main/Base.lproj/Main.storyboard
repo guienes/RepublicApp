@@ -18,11 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InitialBrackground" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-pQ-mgm">
-                                <rect key="frame" x="0.0" y="-12" width="414" height="874"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 3a" translatesAutoresizingMaskIntoConstraints="NO" id="9Ta-pQ-mgm">
+                                <rect key="frame" x="0.0" y="-12" width="414" height="974"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cci-Cz-V2j" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="157" y="532" width="128" height="44"/>
+                                <rect key="frame" x="76" y="537" width="118" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="B5A-to-aN4"/>
                                 </constraints>
@@ -39,31 +40,8 @@
                                     <segue destination="OZ6-N8-IbG" kind="show" id="CtS-tl-ugL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQz-16-dpN" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
-                                <rect key="frame" x="305" y="519" width="70" height="70"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="BPC-2E-IvO"/>
-                                    <constraint firstAttribute="width" constant="70" id="ySj-bA-hfv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="55"/>
-                                <inset key="titleEdgeInsets" minX="7" minY="-10" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" backgroundImage="Rectangle">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="35"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="didTapNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G4r-cZ-9M8"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="xgw-Kf-ZIi">
-                                <rect key="frame" x="112" y="371" width="263" height="101"/>
+                                <rect key="frame" x="76" y="381" width="263" height="101"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DSM-Po-FMo">
                                         <rect key="frame" x="0.0" y="0.0" width="263" height="27"/>
@@ -113,41 +91,73 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="QjD-Fq-6M9">
-                                <rect key="frame" x="328.5" y="538" width="23" height="32"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Entrar" translatesAutoresizingMaskIntoConstraints="NO" id="rsM-OY-G7v">
-                                <rect key="frame" x="112" y="288" width="110" height="30"/>
+                                <rect key="frame" x="76" y="298" width="110" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4fB-jL-wvg"/>
+                                    <constraint firstAttribute="width" constant="110" id="Cpn-XW-bqJ"/>
+                                </constraints>
                             </imageView>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete os campos acima" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22I-Pa-rkZ">
-                                <rect key="frame" x="112" y="480" width="156" height="14.5"/>
+                                <rect key="frame" x="76" y="490" width="156" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQz-16-dpN" customClass="RoundButton" customModule="RepublicApp" customModuleProvider="target">
+                                <rect key="frame" x="279" y="529" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="BPC-2E-IvO"/>
+                                    <constraint firstAttribute="width" constant="60" id="ySj-bA-hfv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="55"/>
+                                <inset key="titleEdgeInsets" minX="7" minY="-10" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" backgroundImage="Rectangle">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didTapNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G4r-cZ-9M8"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seta" translatesAutoresizingMaskIntoConstraints="NO" id="QjD-Fq-6M9">
+                                <rect key="frame" x="297" y="547" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="hzs-l1-746"/>
+                                    <constraint firstAttribute="height" constant="24" id="zNS-sB-PEA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="xgw-Kf-ZIi" firstAttribute="top" secondItem="rsM-OY-G7v" secondAttribute="bottom" constant="53" id="0I1-5b-6Bt"/>
                             <constraint firstItem="9Ta-pQ-mgm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-100" id="0xZ-xk-a57"/>
+                            <constraint firstItem="xgw-Kf-ZIi" firstAttribute="top" secondItem="rsM-OY-G7v" secondAttribute="bottom" constant="53" id="2jI-jk-pjf"/>
                             <constraint firstItem="QjD-Fq-6M9" firstAttribute="centerY" secondItem="cci-Cz-V2j" secondAttribute="centerY" id="5w3-jI-yNm"/>
-                            <constraint firstItem="22I-Pa-rkZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="791-d9-odf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BQz-16-dpN" secondAttribute="trailing" constant="39" id="CJe-j5-bJv"/>
+                            <constraint firstItem="22I-Pa-rkZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="791-d9-odf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BQz-16-dpN" secondAttribute="trailing" constant="75" id="CJe-j5-bJv"/>
                             <constraint firstItem="BQz-16-dpN" firstAttribute="top" secondItem="xgw-Kf-ZIi" secondAttribute="bottom" constant="47" id="FbR-r4-TZJ"/>
-                            <constraint firstItem="BQz-16-dpN" firstAttribute="leading" secondItem="cci-Cz-V2j" secondAttribute="trailing" constant="20" id="Mwp-UF-i9f"/>
+                            <constraint firstItem="BQz-16-dpN" firstAttribute="leading" secondItem="cci-Cz-V2j" secondAttribute="trailing" constant="85" id="Mwp-UF-i9f"/>
                             <constraint firstItem="22I-Pa-rkZ" firstAttribute="top" secondItem="xgw-Kf-ZIi" secondAttribute="bottom" constant="8" id="S26-Dh-ziG"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Ta-pQ-mgm" secondAttribute="bottom" id="THb-Kq-egY"/>
-                            <constraint firstItem="cci-Cz-V2j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="157" id="XF8-tW-57a"/>
-                            <constraint firstItem="rsM-OY-G7v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="c4t-iO-09w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Ta-pQ-mgm" secondAttribute="bottom" constant="-100" id="THb-Kq-egY"/>
+                            <constraint firstItem="cci-Cz-V2j" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="XF8-tW-57a"/>
                             <constraint firstItem="QjD-Fq-6M9" firstAttribute="centerX" secondItem="BQz-16-dpN" secondAttribute="centerX" id="ebp-IR-cHE"/>
                             <constraint firstItem="QjD-Fq-6M9" firstAttribute="centerY" secondItem="BQz-16-dpN" secondAttribute="centerY" id="f1i-df-Ytm"/>
                             <constraint firstItem="BQz-16-dpN" firstAttribute="trailing" secondItem="xgw-Kf-ZIi" secondAttribute="trailing" id="fDI-fb-PWc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Ta-pQ-mgm" secondAttribute="trailing" id="gh7-7c-zBJ"/>
-                            <constraint firstItem="rsM-OY-G7v" firstAttribute="leading" secondItem="xgw-Kf-ZIi" secondAttribute="leading" id="koJ-YB-N7k"/>
-                            <constraint firstItem="xgw-Kf-ZIi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="112" id="mq7-3g-GSS"/>
+                            <constraint firstItem="rsM-OY-G7v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="210" id="i4t-eS-QWp"/>
+                            <constraint firstItem="xgw-Kf-ZIi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="mq7-3g-GSS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rsM-OY-G7v" secondAttribute="trailing" constant="228" id="qyk-D5-aOM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="22I-Pa-rkZ" secondAttribute="trailing" symbolic="YES" id="soh-6t-CuO"/>
                             <constraint firstItem="9Ta-pQ-mgm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sty-Cd-1Va"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xgw-Kf-ZIi" secondAttribute="trailing" constant="39" id="yka-Xj-K7R"/>
+                            <constraint firstItem="rsM-OY-G7v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="yeW-WI-iQK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xgw-Kf-ZIi" secondAttribute="trailing" constant="75" id="yka-Xj-K7R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -907,8 +917,8 @@
         <image name="CriarConta" width="110" height="78"/>
         <image name="CriarRepública" width="169" height="78"/>
         <image name="Entrar" width="110" height="30"/>
+        <image name="Group 3a" width="414" height="896"/>
         <image name="IconeAdicionarFoto" width="114" height="114"/>
-        <image name="InitialBrackground" width="414" height="896"/>
         <image name="JoinRepublic" width="349" height="162"/>
         <image name="Juntar-se" width="158" height="27"/>
         <image name="Oval" width="414" height="119"/>
@@ -919,7 +929,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dTd-cU-gP2"/>
-        <segue reference="fgv-wL-rG8"/>
+        <segue reference="Htf-Tm-qF4"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
